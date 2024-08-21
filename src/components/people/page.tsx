@@ -35,9 +35,6 @@ const People: React.FC = () => {
     <div className="container mx-auto py-8">
       <h1 className="text-4xl font-bold text-center mb-4">People</h1>
       <p className="text-center text-gray-600 mb-8">
-        Each year, a tight-knit group of undergraduate students get together to push out innovative machine learning
-        research, spanning multiple disciplines. We maintain a close relation with graduate and faculty advisors who
-        oversee our work. Many of our alumni go on to accomplish great things across many disciplines upon graduating.
       </p>
 
       <div className="flex justify-center mb-8">
