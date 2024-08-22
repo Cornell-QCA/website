@@ -3,6 +3,7 @@ import Page from './components/home/page'
 import Blurb from './components/blurb/page'
 import Apply from './components/apply/page'
 import Projects from './components/projects/page'
+import Events from './components/events/page'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Blurb />
       <Apply />
       <Projects />
+      <Events />
       <People />
 
       <footer className='flex items-center justify-center w-full h-24 border-t text-sm '>

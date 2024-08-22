@@ -41,6 +41,9 @@ export default {
           900: '#994F4B',
         },
       },
+      spacing: {
+        '128': '48rem',
+      }
     },
   },
   plugins: [],
