@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
   const [projectDescriptions, setProjectDescriptions] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
-    Papa.parse('/data/projects.csv', {
+    Papa.parse('data/projects.csv', {
       download: true,
       header: true,
       complete: async (result: any) => {
@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
         // Fetch and parse markdown files
         const descriptions = await Promise.all(
           projectData.map(async (project: ProjectData) => {
-            const response = await fetch(`/src/data/projects/${project.file}.md`);
+            const response = await fetch(`data/projects/${project.file}.md`);
             const markdown = await response.text();
             return <div dangerouslySetInnerHTML={{ __html: marked(markdown) }} />;
           })

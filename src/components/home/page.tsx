@@ -7,7 +7,7 @@ const Page: React.FC = () => {
   return (
     <div className="relative h-screen">
       <div className="absolute inset-0 flex justify-center items-center opacity-30">
-        <img src="/logo.png" alt="Background Logo" className="w-3/4 h-auto" />
+        <img src="logo.png" alt="Background Logo" className="w-3/4 h-auto" />
       </div>
 
       <div className="relative z-10 flex flex-col justify-center items-center h-full p-8 text-center">
