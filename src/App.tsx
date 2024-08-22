@@ -2,6 +2,7 @@ import People from './components/people/page'
 import Page from './components/home/page'
 import Blurb from './components/blurb/page'
 import Apply from './components/apply/page'
+import Projects from './components/projects/page'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Page />
       <Blurb />
       <Apply />
+      <Projects />
       <People />
 
       <footer className='flex items-center justify-center w-full h-24 border-t text-sm '>

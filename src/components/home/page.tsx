@@ -21,7 +21,7 @@ const Page: React.FC = () => {
         </div>
       </div>
       <div>
-        <img src="public/logo.png" alt="Graphic" className="w-64" />
+        <img src="/logo.png" alt="Graphic" className="w-64" />
       </div>
     </div>
   );

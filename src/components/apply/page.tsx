@@ -3,7 +3,7 @@ import Section from './section';
 
 const Apply: React.FC = () => {
     return (
-        <div className="py-12 px-4">
+        <div className="px-4">
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
             <p className="text-center mb-12">
                 Cornell QCA is recruiting across all subteams for
@@ -13,7 +13,6 @@ const Apply: React.FC = () => {
             </p>
 
             <div className="relative">
-                {/* Timeline Line */}
                 <div className="absolute top-0 left-4 w-1 bg-purple-500 h-full"></div>
 
                 <Section title="Coffee Chats">
