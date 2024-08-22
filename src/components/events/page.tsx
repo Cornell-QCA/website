@@ -40,7 +40,7 @@ const Events: React.FC = () => {
               {event.desc}
             </div>
             <img
-              src={`/events/${event.file}.png`}
+              src={`events/${event.file}.png`}
               alt={`Event ${index + 1}`}
               className="w-full h-64 md:h-96 lg:h-128 object-cover object-center"
             />
