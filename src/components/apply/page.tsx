@@ -13,7 +13,7 @@ const Apply: React.FC = () => {
             </p>
 
             <div className="relative">
-                <div className="absolute top-0 left-4 w-1 bg-qca_red_dark-500 h-full"></div>
+                <div className="absolute top-0 mx-4 w-1 bg-qca_red_dark-500 h-full"></div>
 
                 <Section title="Coffee Chats">
                     <p>
@@ -40,15 +40,9 @@ const Apply: React.FC = () => {
                     </p>
                     <p className="mt-4">
                         Applications are due on <strong>Tuesday, September
-                            10th at 11:59pm</strong> for freshmen and
-                        upperclassmen. After the application review,
-                        selected candidates will be contacted to schedule
-                        interviews.
-                    </p>
-                    <p className="mt-4">
-                        For more information on the project team application
-                        process, click <a href="https://forms.gle/CxabnprNvPMpSGWR6" className="text-qca_red_dark-400
-                            underline">here</a>.
+                        10th at 11:59pm</strong>. Candidates will be
+                        contacted to schedule interviews after all applications
+                        are reviewed.
                     </p>
                 </Section>
 

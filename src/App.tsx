@@ -12,8 +12,8 @@ function App() {
       <Blurb />
       <Apply />
       <Projects />
-      <Events />
       <People />
+      <Events />
 
       <footer className='flex items-center justify-center w-full h-24 border-t text-sm '>
       © 2024 Cornell Quantum Computing Association. This organization is a
