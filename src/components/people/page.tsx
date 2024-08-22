@@ -16,7 +16,7 @@ const People: React.FC = () => {
 
   useEffect(() => {
     // Load and parse the CSV
-    Papa.parse('/src/data/people.csv', {
+    Papa.parse('/data/people.csv', {
       download: true,
       header: true,
       complete: (result: any) => {
