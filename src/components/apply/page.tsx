@@ -3,7 +3,7 @@ import Section from './section';
 
 const Apply: React.FC = () => {
     return (
-        <div className="px-4">
+        <div className="px-4 mt-8">
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
             <p className="text-center mb-12">
                 Cornell QCA is recruiting across all subteams for
@@ -13,14 +13,14 @@ const Apply: React.FC = () => {
             </p>
 
             <div className="relative">
-                <div className="absolute top-0 left-4 w-1 bg-purple-500 h-full"></div>
+                <div className="absolute top-0 left-4 w-1 bg-qca_red_dark-500 h-full"></div>
 
                 <Section title="Coffee Chats">
                     <p>
                         If you want to learn more about Cornell QCA, feel
                         free to fill out the coffee chat <a
                             href="https://forms.gle/t76prdxKDJczcEUQ7"
-                            className="text-blue-400 underline">form</a>! Coffee
+                            className="text-qca_red_dark-400">form</a>! Coffee
                         chats are optional but are strongly encouraged.
                     </p>
                 </Section>
@@ -47,7 +47,7 @@ const Apply: React.FC = () => {
                     </p>
                     <p className="mt-4">
                         For more information on the project team application
-                        process, click <a href="https://forms.gle/CxabnprNvPMpSGWR6" className="text-blue-400
+                        process, click <a href="https://forms.gle/CxabnprNvPMpSGWR6" className="text-qca_red_dark-400
                             underline">here</a>.
                     </p>
                 </Section>

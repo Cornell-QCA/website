@@ -40,19 +40,19 @@ const People: React.FC = () => {
       <div className="flex justify-center mb-8">
         <button
           onClick={() => handleTabChange('member')}
-          className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'member' ? 'border-b-4 border-blue-500' : ''}`}
+          className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'member' ? 'text-qca_red_dark-400' : ' border-white'}`}
         >
-          Current Members
+          Members
         </button>
         <button
           onClick={() => handleTabChange('advisor')}
-          className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'advisor' ? 'border-b-4 border-blue-500' : ''}`}
+          className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'advisor' ? 'text-qca_red_dark-400' : ''}`}
         >
-          Research Advisors
+          Faculty
         </button>
         <button
           onClick={() => handleTabChange('alumni')}
-          className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'alumni' ? 'border-b-4 border-blue-500' : ''}`}
+          className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'alumni' ? 'text-qca_red_dark-400' : ''}`}
         >
           Alumni
         </button>

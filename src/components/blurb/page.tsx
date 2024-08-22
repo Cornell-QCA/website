@@ -3,8 +3,8 @@ import React from 'react';
 const Blurb: React.FC = () => {
     return (
         <div className="container mx-auto px-4 text-gray-800">
-            <h2 className="text-3xl font-bold text-center mb-6">About</h2>
-            <p className="text-lg leading-relaxed mb-4">
+            <h2 className="text-4xl font-bold text-center mb-6">About</h2>
+            <p className="text-lg leading-relaxed text-center mb-4">
                 The Cornell University Quantum Computing Association (Cornell
                 QCA) is an undergraduate student organization that provides
                 opportunities in quantum computing.  We conduct an introductory
