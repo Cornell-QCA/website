@@ -1,4 +1,3 @@
-import React from 'react';
 import People from './components/people/page';
 import Page from './components/home/page';
 import Blurb from './components/blurb/page';
@@ -7,7 +6,7 @@ import Projects from './components/projects/page';
 import Events from './components/events/page';
 import Navbar from './components/navbar/page';
 
-function App() {
+const App = () => {
   return (
     <div className="flex flex-col items-center justify-center py-2">
       <Navbar />
@@ -27,10 +26,9 @@ function App() {
       <div id="people">
         <People />
       </div>
-      <div id="events">
-        {/* <Events /> */}
       </div>
-
+      <div id="events">
+        <Events />
       </div>
       <footer className="flex items-center justify-center w-full h-24 border-t text-sm">
         © 2024 Cornell Quantum Computing Association. This organization is a
@@ -40,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

@@ -23,7 +23,7 @@ const Events: React.FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto py-8">
+    <div className="py-8">
       <h1 className="text-4xl font-bold text-center mb-8">Previous Events</h1>
       <Carousel
         showThumbs={false}
@@ -32,7 +32,7 @@ const Events: React.FC = () => {
         useKeyboardArrows
         autoPlay
         interval={5000}
-        className="w-full max-w-screen-2xl object-cover object-center"
+        className="max-w-screen-2xl object-cover object-center"
       >
         {events.map((event, index) => (
           <>
@@ -40,7 +40,7 @@ const Events: React.FC = () => {
               <img
                 src={`events/${event.file}.png`}
                 alt={`Event ${index + 1}`}
-                className="w-full h-64 md:h-96 lg:h-128 object-cover object-center"
+                className="h-64 md:h-96 lg:h-128 object-cover object-center"
               />
             </div>
             <div className="left-0 right-0 bg-black bg-opacity-50 p-2 mb-2 text-white text-center z-20">
