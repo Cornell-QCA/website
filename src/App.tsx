@@ -14,7 +14,7 @@ function App() {
       <div id="home">
         <Page />
       </div>
-      <div className=' max-w-screen-lg'>
+      <div className='w-screen-md'>
       <div id="blurb">
         <Blurb />
       </div>
@@ -28,7 +28,7 @@ function App() {
         <People />
       </div>
       <div id="events">
-        <Events />
+        {/* <Events /> */}
       </div>
 
       </div>
