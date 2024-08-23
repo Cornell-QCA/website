@@ -1,11 +1,12 @@
-name,linkedin,title,club_status
-Ryan Byrne,ryan-byrne-300,President,member
-Haadi Khan,haadi-khan,Theory Lead,member
-Austin Wu,austin--wu,Hardware Lead,member
-Avery Avila,averyavila,Algos Co-Lead,member
-Ahan Mishra,ahan-mishra,Algos Co-Lead,member
-Julianne Lee,juliannelee1,Business Lead,member
-Nelson Ooi,nelson-ooi,Stanford ECE PhD,alumni
-Valla Fatemi,valla-fatemi,Club Advisor,advisor
-Peter McMahon,peter-mcmahon,Club Advisor,advisor
-Or Katz,or-katz,Hardware Advisor,advisor
+name,linkedin,title,subteam,club_status
+Ryan Byrne,ryan-byrne-300,President,theory,member
+Haadi Khan,haadi-khan,Theory Lead,theory,member
+Austin Wu,austin--wu,Hardware Lead,hardware,member
+Avery Avila,averyavila,Algos Co-Lead,algos,member
+Ahan Mishra,ahan-mishra,Algos Co-Lead,algos,member
+Julianne Lee,juliannelee1,Business Lead,theory,member
+Nelson Ooi,nelson-ooi,Stanford ECE PhD,hardware,alumni
+Valla Fatemi,valla-fatemi,Club Advisor,theory,advisor
+Peter McMahon,peter-mcmahon,Club Advisor,hardware,advisor
+Or Katz,or-katz,Hardware Advisor,hardware,advisor
+Shreyansh Kabir,shreykabir,,hardware,member
