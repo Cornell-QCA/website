@@ -28,7 +28,6 @@ const Events: React.FC = () => {
       <Carousel
         showThumbs={false}
         showStatus={false}
-        infiniteLoop
         useKeyboardArrows
         autoPlay
         interval={5000}
@@ -43,7 +42,7 @@ const Events: React.FC = () => {
                 className="h-64 md:h-96 lg:h-128 object-cover object-center"
               />
             </div>
-            <div className="left-0 right-0 bg-black bg-opacity-50 p-2 mb-2 text-white text-center z-20">
+            <div className="left-0 right-0 bg-gray-50 mb-3 text-center z-20">
               <p className='p-2'>
                 {event.desc}
               </p>
