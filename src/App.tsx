@@ -13,22 +13,22 @@ const App = () => {
       <div id="home">
         <Page />
       </div>
-      <div className='w-screen-md'>
-      <div id="blurb">
-        <Blurb />
-      </div>
-      <div id="apply">
-        <Apply />
-      </div>
-      <div id="projects">
-        <Projects />
-      </div>
-      <div id="people">
-        <People />
-      </div>
-      </div>
-      <div id="events">
-        <Events />
+      <div className='max-w-screen-xl'>
+        <div id="blurb">
+          <Blurb />
+        </div>
+        <div id="apply">
+          <Apply />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="people">
+          <People />
+        </div>
+        <div id="events">
+          <Events />
+        </div>
       </div>
       <footer className="flex items-center justify-center w-full h-24 border-t text-sm">
         © 2024 Cornell Quantum Computing Association. This organization is a
