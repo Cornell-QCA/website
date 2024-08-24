@@ -17,12 +17,12 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'pnpm'
+        cache: 'npm'
 
-    - name: Install dependencies with pnpm
-      run: pnpm install
+    - name: Install dependencies with npm
+      run: npm install
 
     - name: Run deployment
-      run: pnpm run deploy
+      run: npm run deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
