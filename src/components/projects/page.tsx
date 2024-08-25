@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
   const [projectDescriptions, setProjectDescriptions] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
-    Papa.parse('data/projects.csv', {
+    Papa.parse('data/csv/projects.csv', {
       download: true,
       header: true,
       complete: async (result: any) => {

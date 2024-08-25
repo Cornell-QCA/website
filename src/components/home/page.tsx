@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedin, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Page: React.FC = () => {
@@ -26,6 +26,9 @@ const Page: React.FC = () => {
           </a>
           <a href="https://www.linkedin.com/company/quantum-computing-association-at-cornell/" aria-label="LinkedIn">
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </a>
+          <a href="https://discord.gg/HT5wWmFSGT" aria-label="Discord">
+            <FontAwesomeIcon icon={faDiscord} size="2x" />
           </a>
           <a href="https://forms.gle/Pyi1S9zRKhbHu3UQA" aria-label="Email">
             <FontAwesomeIcon icon={faEnvelope} size="2x" />

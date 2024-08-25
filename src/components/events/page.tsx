@@ -13,7 +13,7 @@ const Events: React.FC = () => {
 
   useEffect(() => {
     // Load and parse the CSV
-    Papa.parse('data/events.csv', {
+    Papa.parse('data/csv/events.csv', {
       download: true,
       header: true,
       complete: (result: any) => {

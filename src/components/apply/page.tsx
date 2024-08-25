@@ -29,7 +29,7 @@ const Apply: React.FC = () => {
                     <p>
                         Information sessions will be held at <strong>5pm on
                             Sunday, September 8th, 2024</strong> and <strong>5pm
-                                on Monday, September 9th, 2024</strong> in Gates
+                                on Monday, September 9th, 2024</strong> in Phillips 203.
                     </p>
                 </Section>
 
