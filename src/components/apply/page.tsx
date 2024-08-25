@@ -5,7 +5,7 @@ const Apply: React.FC = () => {
     return (
         <div className="px-4 mt-8">
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
-            <p className="text-center mb-12">
+            <p className="text-lg text-center mb-12">
                 Cornell QCA is recruiting across all subteams for
                 Fall 2024! Please attend our information sessions on September
                 8th and 9th to learn more and get any specific questions
