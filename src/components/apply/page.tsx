@@ -17,11 +17,11 @@ const Apply: React.FC = () => {
 
                 <Section title="Coffee Chats">
                     <p>
-                        If you want to learn more about Cornell QCA, feel
-                        free to fill out the coffee chat <a
-                            href="https://forms.gle/t76prdxKDJczcEUQ7"
-                            className="text-qca_red_dark-400">form</a>! Coffee
-                        chats are optional but are strongly encouraged.
+                        If you want to learn more about Cornell QCA, feel free
+                        to schedule a <a href="/coffee_chats"
+                        className="text-qca_red_dark-400">coffee chat</a> with a
+                        member! Coffee chats are optional but are strongly
+                        encouraged.
                     </p>
                 </Section>
 

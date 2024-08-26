@@ -140,7 +140,7 @@ const People: React.FC = () => {
             image={person.linkedin}
             title={person.name}
             subtitle={person.title}
-            link={person.linkedin}
+            link={`https://www.linkedin.com/in/${person.linkedin}`}
           />
         ))}
       </div>
