@@ -1,1 +1,1 @@
-let's go jets!
+Interested Quantum Algorithm design
