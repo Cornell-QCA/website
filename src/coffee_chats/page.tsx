@@ -15,7 +15,6 @@ const CoffeeChat: React.FC = () => {
   const [bios, setBios] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    // Load and parse the CSV
     Papa.parse('data/csv/coffee_chats.csv', {
       download: true,
       header: true,

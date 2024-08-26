@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faLinkedin, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faTree } from '@fortawesome/free-solid-svg-icons';
 
-const Page: React.FC = () => {
+const Logo: React.FC = () => {
   return (
     <div className="relative h-screen">
       <div className="absolute inset-0 flex justify-center items-center opacity-30">
@@ -42,4 +42,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Logo;
