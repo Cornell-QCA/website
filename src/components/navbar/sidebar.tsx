@@ -29,6 +29,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           <HashLink to="/#apply" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Apply
           </HashLink>
+          <HashLink to="/#links" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+            Links
+          </HashLink>
           <HashLink to="/#projects" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Projects
           </HashLink>
