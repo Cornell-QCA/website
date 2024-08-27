@@ -1,3 +1,1 @@
-Interested in Optics, Quantum Materials, and Condensed Matter research
-<br>
-Also interested in Math & Material Science
+Interested in optics, quantum materials, and condensed matter research. I'm also interested in math.

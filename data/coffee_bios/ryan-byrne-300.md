@@ -1,2 +1,1 @@
-Interested in Quantum Information Science (both hardware & software) & Entrepreneurship
-<br>
+Interested in quantum information science (both hardware & software) & entrepreneurship
