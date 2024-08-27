@@ -1,5 +1,4 @@
 import React from 'react'
-import Page from './coffee_chats/page'
 import Blurb from './components/blurb/page'
 import Apply from './components/apply/page'
 import Projects from './components/projects/page'
