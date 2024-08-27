@@ -13,10 +13,10 @@ const Apply: React.FC = () => {
             </p>
 
             <div className='grid grid-cols-2 gap-2 items-center text-lg mb-8'>
-                <button className="block text-lg ml-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('https://forms.gle/Pyi1S9zRKhbHu3UQA', '_blank')}>
-                    Coffee Chat
+                <button className="block text-lg ml-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('/#coffee', '_self')}>
+                    Coffee Chats
                 </button>
-                <button className="block text-lg mr-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('', '_blank')}>
+                <button className="block text-lg mr-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('https://forms.gle/JcaQgUg1HoFUs5Bt9', '_blank')}>
                     Apply Now!
                 </button>
             </div>

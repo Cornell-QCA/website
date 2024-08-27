@@ -16,9 +16,9 @@ const Links: React.FC = () => {
           ></Link>
         
         <Link
-          title = {'Funamentals Syllabus'}
+          title = {'Fundamentals Syllabus'}
           link = {'https://docs.google.com/document/d/1wZHFWIt5Mhtjy4JH2ew3t48ZjnR-gXfNrvEopHNgT4E/edit#heading=h.xol6henfliy8'}
-          desc = {''}
+          desc = {'The syllabus for our intro QC lecture series'}
           ></Link>
       </div>
     </div>
