@@ -37,6 +37,9 @@ const Blurb: React.FC = () => {
                 className="text-lg leading-relaxed text-center mb-4"
                 dangerouslySetInnerHTML={{ __html: content }}
             />
+            <button className="block text-lg mx-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('https://forms.gle/Pyi1S9zRKhbHu3UQA', '_blank')}>
+                Join our Listserv!
+            </button>
         </div>
     );
 };

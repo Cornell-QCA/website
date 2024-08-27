@@ -12,6 +12,15 @@ const Apply: React.FC = () => {
                 answered. The full timeline is shown below.
             </p>
 
+            <div className='grid grid-cols-2 gap-2 items-center text-lg mb-8'>
+                <button className="block text-lg ml-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('https://forms.gle/Pyi1S9zRKhbHu3UQA', '_blank')}>
+                    Coffee Chat
+                </button>
+                <button className="block text-lg mr-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('', '_blank')}>
+                    Apply Now!
+                </button>
+            </div>
+
             <div className="relative">
                 <div className="absolute top-0 mx-4 w-1 bg-qca_red_dark-500 h-full"></div>
 
@@ -29,7 +38,7 @@ const Apply: React.FC = () => {
                     <p>
                         Information sessions will be held at <strong>5pm on
                             Sunday, September 8th, 2024</strong> and <strong>5pm
-                                on Monday, September 9th, 2024</strong> in Phillips 203.
+                                on Monday, September 9th, 2024</strong> in Phillips 219.
                     </p>
                 </Section>
 

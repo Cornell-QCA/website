@@ -30,12 +30,12 @@ const Logo: React.FC = () => {
           <a href="https://discord.gg/HT5wWmFSGT" aria-label="Discord">
             <FontAwesomeIcon icon={faDiscord} size="2x" />
           </a>
-          <a href="https://linktr.ee/cuquantumcomputing" aria-label="Email">
+          {/* <a href="https://linktr.ee/cuquantumcomputing" aria-label="Email">
             <FontAwesomeIcon icon={faTree} size="2x" />
-          </a>
-          <a href="https://forms.gle/Pyi1S9zRKhbHu3UQA" aria-label="Email">
+          </a> */}
+          {/* <a href="https://forms.gle/Pyi1S9zRKhbHu3UQA" aria-label="Email">
             <FontAwesomeIcon icon={faEnvelope} size="2x" />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
