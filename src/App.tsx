@@ -13,7 +13,7 @@ const App: React.FC = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/coffee_chats" element={<CoffeeChats />} />
+          <Route path="/coffee" element={<CoffeeChats />} />
         </Routes>
 
         <footer className="flex items-center justify-center w-full h-24 border-t text-sm">
