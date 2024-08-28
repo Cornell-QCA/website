@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import Project from './project';
+import Link from './project';
 import { marked } from 'marked';
 
 interface ProjectData {
@@ -41,12 +41,12 @@ const Projects: React.FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
         {projects.map((project, index) => (
-          <Project
+          <Link
             key={index}
             title={project.title}
             group={project.group + ' Group'}
             link={project.link}
-          >{projectDescriptions[index]}</Project>
+          >{projectDescriptions[index]}</Link>
         ))}
       </div>
     </div>
