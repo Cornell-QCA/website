@@ -45,7 +45,7 @@ const CoffeeChat: React.FC = () => {
       </p>
       <p className='text-center text-lg mb-8'>
         To sign up for a coffee chat, click on a member's profile and fill out
-        their calendly form. 
+        their Calendly form. 
       </p>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>

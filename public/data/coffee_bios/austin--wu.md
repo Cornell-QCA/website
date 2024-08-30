@@ -1,1 +1,1 @@
-Interested in quantum hardware. I research in the [Yasuda Lab](https://www.aep.cornell.edu/faculty-directory/kenji-yasuda) and research nanomaterial fabrication
+Interested in quantum hardware. I research in the [Yasuda Lab](https://www.aep.cornell.edu/faculty-directory/kenji-yasuda) and work on nanomaterial fabrication.

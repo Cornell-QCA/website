@@ -1,1 +1,1 @@
-Interested in quantum simulation. I research in the [Katz Lab](https://iontrap.aep.cornell.edu/) and work on Spin-Boson Quantum Simulation
+Interested in quantum simulation. I research in the [Katz Lab](https://iontrap.aep.cornell.edu/) and work on spin-boson QC simulation.
