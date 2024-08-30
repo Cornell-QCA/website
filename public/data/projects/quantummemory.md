@@ -1,1 +1,1 @@
-We are taking an existing MOT donated to us and building a long-lived quantum memory for photons (based on neutral atoms). Using a novel scheme that could potentially stop photons for the scale of an hour. Novel work and hopeuflly publishable as a group.
+We are taking an existing MOT donated to us and building a long-lived quantum memory for photons (based on neutral atoms) using a novel scheme that could potentially stop photons for the scale of an hour. Novel work and hopefully publishable as a group.
