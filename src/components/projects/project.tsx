@@ -2,12 +2,12 @@ import React from 'react';
 
 interface ProjectProps {
   title: string;
-  group: string;
+  group?: string;
   link: string;
   children: React.ReactNode;
 }
 
-const Project: React.FC<ProjectProps> = ({ title, group, link, children }) => {
+const Link: React.FC<ProjectProps> = ({ title, group, link, children }) => {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <div className="rounded-lg p-6 shadow-lg transform transition-transform hover:scale-105 duration-300 h-min">
@@ -19,4 +19,4 @@ const Project: React.FC<ProjectProps> = ({ title, group, link, children }) => {
   );
 };
 
-export default Project;
+export default Link;
