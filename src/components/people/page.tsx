@@ -99,7 +99,7 @@ const People: React.FC = () => {
       </div>
 
       {/* Second Row of Filters: Theory, Hardware, Algos */}
-      <div className="flex justify-center mb-8">
+      {/* <div className="flex justify-center mb-8">
         <button
           onClick={() => handleSubteamChange('theory')}
           className={`px-4 py-2 mx-2 font-semibold ${
@@ -129,8 +129,8 @@ const People: React.FC = () => {
           }`}
         >
           Algos
-        </button>
-      </div>
+        </button> 
+      </div> */}
 
       {/* Cards Display */}
       <div className="place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
