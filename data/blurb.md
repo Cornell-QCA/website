@@ -1,4 +1,4 @@
-The Cornell University Quantum Computing Association (Cornell QCA) is an
+The Quantum Computing Association at Cornell University is an
 undergraduate student organization that provides opportunities in quantum
 computing.  We conduct an introductory series of lectures on quantum computing
 open to the public, and we pursue research projects with active project members.
