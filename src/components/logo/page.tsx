@@ -11,7 +11,7 @@ const Logo: React.FC = () => {
 
       <div className="relative z-10 flex flex-col justify-center items-center h-full p-8 text-center">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">
-          Cornell Quantum Computing Association
+          Quantum Computing Association @ Cornell
         </h1>
         <p className="text-2xl text-gray-600 mb-8">
           A team of undergraduate students researching quantum computing
