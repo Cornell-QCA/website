@@ -2,7 +2,9 @@ import React from 'react';
 import Section from './section';
 
 const Apply: React.FC = () => {
-    return (
+    const isRecruiting = false;
+
+    return isRecruiting ? (
         <div className="px-4 mt-8">
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
             <p className="text-lg text-center mb-12">
@@ -66,6 +68,16 @@ const Apply: React.FC = () => {
                     </p>
                 </Section>
             </div>
+        </div>
+    ) : (
+        <div className="px-4 mt-8">
+            <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
+            <p className="text-lg text-center mb-12">
+                QCA is not currently recruiting. Please check back later for
+                updates on our recruitment cycle.
+            </p>
+
+
         </div>
     );
 };
