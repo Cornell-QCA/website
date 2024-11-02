@@ -1,4 +1,1 @@
-Topological Quantum Computing (TQC) is an exciting subfield of Quantum Computing
-which may enable fault-tolerant quantum computation on the hardware level. In
-order to explore TQC, our team developed a simulator to learn more about anyons
-(the particles that enable TQC) and implement anyonic interaction principles.
+Topological Quantum Computing (TQC) is an exciting subfield of quantum computing which may enable the reduction of errors by encoding qubits in a system of quasiparticles called anyons. In order to explore TQC, our team developed a tool that simulates the braiding and fusion of these anyons to allow for topologically protected quantum gates.
