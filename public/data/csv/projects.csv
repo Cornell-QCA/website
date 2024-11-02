@@ -2,5 +2,5 @@ title,group,file,link
 Anyon Braiding Simulator,Theory,anyon,https://github.com/Cornell-QCA/anyon-braiding-simulator
 Topological QC Emulator,Theory,topoqc,https://github.com/Cornell-QCA/tqc-emu
 Quantum Algorithms,Algos,qalg,https://github.com/Cornell-QCA/
-Quantum Phonon Memory,Hardware,quantummemory,https://github.com/Cornell-QCA/
+Photonic Quantum Memory,Hardware,quantummemory,https://github.com/Cornell-QCA/
 OpenQuantum MOT,Hardware,openquantumtrap,https://github.com/Cornell-QCA/
