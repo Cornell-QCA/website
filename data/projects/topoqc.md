@@ -1,6 +1,4 @@
-We're developing the **first** open-source topological quantum emulator in collaboration with [UC Quantum](https://ucquantum.com/).
-
-‎
+We're developing an open-source topological quantum emulator in collaboration with [UC Quantum](https://ucquantum.com/).
 
 ‎
 
