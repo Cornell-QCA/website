@@ -1,1 +1,0 @@
-Interested Quantum Algorithm design
