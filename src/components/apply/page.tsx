@@ -12,11 +12,8 @@ const Apply: React.FC = () => {
                 Spring 2024! The full timeline is shown below.
             </p>
 
-            <div className='grid grid-cols-2 gap-2 items-center text-lg mb-8'>
-                <button className="block text-lg ml-auto px-8 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('/#coffee', '_self')}>
-                    Coffee Chats
-                </button>
-                <button className="block text-lg mr-auto px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('https://forms.gle/JcaQgUg1HoFUs5Bt9', '_blank')}>
+            <div className='flex justify-center text-lg mb-8'>
+                <button className="text-lg px-10 py-4 bg-qca_red_dark-500 text-white rounded hover:bg-qca_red_dark-600" onClick={() => window.open('https://forms.gle/yRWfJwQL3FxruKEM8', '_blank')}>
                     Apply Now!
                 </button>
             </div>
@@ -24,7 +21,7 @@ const Apply: React.FC = () => {
             <div className="relative">
                 <div className="absolute top-0 mx-4 w-1 bg-qca_red_dark-500 h-full"></div>
 
-                <Section title="Coffee Chats">
+                {/* <Section title="Coffee Chats">
                     <p>
                         If you want to learn more about QCA, feel free
                         to schedule a  <a href="/#coffee"
@@ -32,7 +29,7 @@ const Apply: React.FC = () => {
                         member! Coffee chats are optional but are strongly
                         encouraged.
                     </p>
-                </Section>
+                </Section> */}
 {/* 
                 <Section title="Information Sessions">
                     <p>
