@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import Card from './card';
+import { ImageCard } from '../../components/card';
 
 interface Person {
   name: string;
@@ -60,7 +60,7 @@ const People: React.FC = () => {
 
       <div className="place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {filteredPeople.map((person, index) => (
-          <Card
+          <ImageCard
             key={index}
             image={person.linkedin}
             title={person.name}
