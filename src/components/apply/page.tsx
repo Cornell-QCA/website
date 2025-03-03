@@ -45,8 +45,8 @@ const Apply: React.FC = () => {
                         freshmen and upperclassmen this semester!
                     </p>
                     <p className="mt-4">
-                        Applications are due on <strong>Wednesday, February
-                        5th at 11:59pm</strong>. Candidates will be
+                        Applications are due on <strong>Thursday, January
+                        30th at 11:59pm</strong>. Candidates will be
                         contacted to schedule interviews after all applications
                         are reviewed.
                     </p>

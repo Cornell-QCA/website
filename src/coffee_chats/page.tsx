@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import ImageCard from '../components/card';
+import Card from '../components/people/card';
 import { marked } from 'marked';
 
 interface CoffeeChatData {
@@ -50,7 +50,7 @@ const CoffeeChat: React.FC = () => {
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {people.map((person, index) => (
-          <ImageCard
+          <Card
             key={index}
             image={person.linkedin}
             title={person.name}
@@ -58,7 +58,7 @@ const CoffeeChat: React.FC = () => {
             link={`https://calendly.com/${person.calendly}`}
           >
             <div dangerouslySetInnerHTML={{ __html: bios[person.linkedin] || '' }} />
-          </ImageCard>
+          </Card>
         ))}
       </div>
     </div>
