@@ -2,7 +2,7 @@ import React from 'react';
 import Section from './section';
 
 const Apply: React.FC = () => {
-    const isRecruiting = true;
+    const isRecruiting = false;
 
     return isRecruiting ? (
         <div className="px-4 mt-8">

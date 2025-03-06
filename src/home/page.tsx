@@ -1,11 +1,10 @@
-import React from 'react'
-import Blurb from './blurb/page'
-import Apply from './apply/page'
-import Projects from './projects/page'
-import People from './people/page'
-import Events from './events/page'
-import Logo from './logo/page'
-import Links from './links/page'
+import Apply from "../components/apply/page"
+import Blurb from "../components/blurb/page"
+import Events from "../components/events/page"
+import Links from "../components/links/page"
+import Logo from "../components/logo/page"
+import People from "../components/people/page"
+import Projects from "../components/projects/page"
 
 const Home: React.FC = () => {
     return (
