@@ -1,1 +1,3 @@
 Topological Quantum Computing (TQC) is an exciting subfield of quantum computing which may enable the reduction of errors by encoding qubits in a system of quasiparticles called anyons. In order to explore TQC, our team developed a tool that simulates the braiding and fusion of these anyons to allow for topologically protected quantum gates.
+
+Check it out [here](https://github.com/Cornell-QCA/anyon-braiding-simulator)!

@@ -2,14 +2,14 @@ import React from 'react';
 import Section from './section';
 
 const Apply: React.FC = () => {
-    const isRecruiting = false;
+    const isRecruiting = true;
 
     return isRecruiting ? (
         <div className="px-4 mt-8">
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
             <p className="text-lg text-center mb-12">
-                QCA is recruiting for the Business Operations subteam for
-                Spring 2024! The full timeline is shown below.
+                All QCA subteams are recruiting new members for
+                Fall 2024! The full timeline is shown below.
             </p>
 
             <div className='flex justify-center text-lg mb-8'>
@@ -21,7 +21,7 @@ const Apply: React.FC = () => {
             <div className="relative">
                 <div className="absolute top-0 mx-4 w-1 bg-qca_red_dark-500 h-full"></div>
 
-                {/* <Section title="Coffee Chats">
+                <Section title="Coffee Chats">
                     <p>
                         If you want to learn more about QCA, feel free
                         to schedule a  <a href="/#coffee"
@@ -29,15 +29,14 @@ const Apply: React.FC = () => {
                         member! Coffee chats are optional but are strongly
                         encouraged.
                     </p>
-                </Section> */}
-{/* 
+                </Section>
                 <Section title="Information Sessions">
                     <p>
                         Information sessions will be held at <strong>5pm on
                             Sunday, September 8th, 2024</strong> and <strong>5pm
                                 on Monday, September 9th, 2024</strong> in Phillips 219.
                     </p>
-                </Section> */}
+                </Section>
 
                 <Section title="Application">
                     <p>

@@ -45,7 +45,6 @@ const Projects: React.FC = () => {
             key={index}
             title={project.title}
             group={project.group + ' Group'}
-            link={project.link}
           >{projectDescriptions[index]}</Link>
         ))}
       </div>

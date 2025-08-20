@@ -19,9 +19,9 @@ const Home: React.FC = () => {
                 <div id="apply">
                     <Apply />
                 </div>
-                <div id="links">
+                {/* <div id="links">
                     <Links />
-                </div>
+                </div> */}
                 <div id="projects">
                     <Projects />
                 </div>
