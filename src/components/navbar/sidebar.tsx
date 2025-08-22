@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -22,26 +22,26 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         style={{ backgroundColor: '#E6E8E6' }}
       >
         <nav className="mt-16 space-y-4">
-          <HashLink to="/#home" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
-            Home</HashLink>
-          <HashLink to="/#events" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+          <Link to="/" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+            Home</Link>
+          <Link to="/events" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Events
-          </HashLink>
-          <HashLink to="/#projects" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+          </Link>
+          <Link to="/projects" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Projects
-          </HashLink>
-          <HashLink to="/#people" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+          </Link>
+          <Link to="/team" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Team
-          </HashLink>
-          <HashLink to="/#calendar" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
-            Calendar
-          </HashLink>
-          <HashLink to="/#blurb" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+          </Link>
+          <Link to="/recruitment" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+            Recruitment
+          </Link>
+          <Link to="/educational" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Educational
-          </HashLink>
-          <HashLink to="/#links" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
+          </Link>
+          <Link to="/contact" className="block px-6 py-2 hover:bg-gray-200" onClick={onClose}>
             Contact
-          </HashLink>
+          </Link>
         </nav>
       </div>
     </>

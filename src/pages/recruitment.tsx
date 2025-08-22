@@ -1,10 +1,11 @@
 import React from 'react';
-import Section from './section';
+import Section from '../components/section';
 
 const Apply: React.FC = () => {
     const isRecruiting = true;
 
     return isRecruiting ? (
+        <div className='max-w-screen-xl'>
         <div className="px-4 mt-8">
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
             <p className="text-lg text-center mb-12">
@@ -24,7 +25,7 @@ const Apply: React.FC = () => {
                 <Section title="Coffee Chats">
                     <p>
                         If you want to learn more about QCA, feel free
-                        to schedule a  <a href="/#coffee"
+                        to schedule a  <a href="/coffee"
                         className="text-qca_red_dark-400">coffee chat</a> with a
                         member! Coffee chats are optional but are strongly
                         encouraged.
@@ -62,6 +63,7 @@ const Apply: React.FC = () => {
                     </p>
                 </Section>
             </div>
+        </div>
         </div>
     ) : (
         <div className="px-4 mt-8">

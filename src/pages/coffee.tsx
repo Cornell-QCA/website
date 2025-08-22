@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import Card from '../components/people/card';
+import Card from '../components/card';
 import { marked } from 'marked';
 
 interface CoffeeChatData {

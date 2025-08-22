@@ -2,8 +2,14 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HashRouter } from 'react-router-dom'
 import Navbar from './components/navbar/page';
-import CoffeeChats from './coffee_chats/page';
+import CoffeeChats from './pages/coffee';
 import Home from './Home';
+import RecruitmentPage from './pages/recruitment';
+import ProjectsPage from './pages/projects';
+import TeamPage from './pages/team';
+import EventsPage from './pages/events';
+import ContactPage from './pages/contact';
+import EducationalPage from './pages/education';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +23,12 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/coffee" element={<CoffeeChats />} />
+              <Route path="/recruitment" element={<RecruitmentPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/educational" element={<EducationalPage />} />
             </Routes>
           </div>
         </div>

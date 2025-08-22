@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
-import Link from './project';
 import { marked } from 'marked';
+import Link from '../components/project';
 
 interface ProjectData {
   title: string;
@@ -36,6 +36,7 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
+    <div className='max-w-screen-xl'>
     <div className="container mx-auto py-8">
       <h1 className="text-4xl font-bold text-center mb-4">Projects</h1>
 
@@ -48,6 +49,7 @@ const Projects: React.FC = () => {
           >{projectDescriptions[index]}</Link>
         ))}
       </div>
+    </div>
     </div>
   );
 };
