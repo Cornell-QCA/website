@@ -31,7 +31,7 @@ const Apply: React.FC = () => {
 
                         {/* Coffee Chats */}
                         <div className="relative mb-8">
-                            <div className="absolute left-6 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
+                            <div className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
                             <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Coffee Chats</h4>
                                 <p className="text-gray-700 leading-relaxed">
@@ -46,7 +46,7 @@ const Apply: React.FC = () => {
 
                         {/* Information Sessions */}
                         <div className="relative mb-8">
-                            <div className="absolute left-6 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
+                            <div className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
                             <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Information Sessions</h4>
                                 <p className="text-gray-700 leading-relaxed">
@@ -61,7 +61,7 @@ const Apply: React.FC = () => {
 
                         {/* Application */}
                         <div className="relative mb-8">
-                            <div className="absolute left-6 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
+                            <div className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
                             <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Application</h4>
                                 <div className="text-gray-700 leading-relaxed space-y-3">
@@ -79,7 +79,7 @@ const Apply: React.FC = () => {
 
                         {/* Interviews */}
                         <div className="relative mb-8">
-                            <div className="absolute left-6 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
+                            <div className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
                             <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Interviews</h4>
                                 <p className="text-gray-700 leading-relaxed">
