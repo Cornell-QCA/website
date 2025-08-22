@@ -39,7 +39,7 @@ const People: React.FC = () => {
                     <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Our Team</h1>
                     <div className="w-16 sm:w-24 h-px bg-qca_red_dark-500 mx-auto mb-4 sm:mb-6"></div>
                     <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-4">
-                        Meet the passionate individuals driving quantum computing research and education at Cornell.
+                        Meet our members, faculty advisors, and alumni
                     </p>
                 </div>
 

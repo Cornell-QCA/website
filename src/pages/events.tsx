@@ -83,19 +83,19 @@ const Events: React.FC = () => {
 
     const getEventDescription = (desc: string): string => {
         if (desc.includes("Fall Fest '23")) {
-            return 'QCA participated in the global Qiskit Fall Fest 2023, hosting workshops and competitions focused on quantum computing education and research. Students learned about quantum algorithms and had hands-on experience with IBM Qiskit.';
+            return 'We hosted Qiskit Fall Fest, an event series run by IBM Quantum, featuring workshops and guest speakers focused on quantum computing';
         }
         if (desc.includes("Fall Fest '24")) {
-            return 'Building on the success of 2023, QCA organized an even bigger Qiskit Fall Fest in 2024. We hosted multiple workshops, invited guest speakers from IBM Quantum, and organized a hackathon with prizes for the most innovative quantum projects.';
+            return 'We hosted Qiskit Fall Fest, an event series run by IBM Quantum, featuring workshops and guest speakers focused on quantum computing';
         }
         if (desc.includes("Fall Fest '25")) {
-            return 'Join us for the most exciting Qiskit Fall Fest yet! This year we\'re planning workshops on quantum machine learning, quantum optimization, and hands-on labs with the latest quantum hardware. Registration opens soon!';
+            return 'We\'re hosting Qiskit Fall Fest, an event series run by IBM Quantum, featuring workshops and guest speakers focused on quantum computing';
         }
         if (desc.includes('Mehta Lab')) {
-            return 'Members toured the Mehta Laboratory to see cutting-edge quantum research facilities and learn about ongoing quantum experiments at Cornell. This was a great opportunity to see theory put into practice.';
+            return 'Members toured the Mehta Laboratory to see cutting-edge quantum research facilities and learn about ongoing quantum experiments at Cornell';
         }
         if (desc.includes('Summer NME')) {
-            return 'Our summer workshop series focused on quantum computing fundamentals, covering topics from basic quantum mechanics to advanced quantum algorithms. Perfect for students new to quantum computing.';
+            return 'Our summer workshop series focused on quantum computing fundamentals, covering topics from basic quantum mechanics to advanced quantum algorithms';
         }
         return 'More details coming soon.';
     };
@@ -108,7 +108,7 @@ const Events: React.FC = () => {
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Events</h1>
                     <div className="w-24 h-px bg-qca_red_dark-500 mx-auto mb-6"></div>
                     <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                        Discover our workshops, hackathons, lab tours, and networking events that bring the quantum community together.
+                        Workshops, talks, and lab tours we host for the Cornell community
                     </p>
                 </div>
 

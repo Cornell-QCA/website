@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Projects</h1>
           <div className="w-24 h-px bg-qca_red_dark-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Explore the innovative research projects our teams are working on across theory, algorithms, and hardware.
+            Explore the research projects our teams are working on across theory, algorithms, and hardware.
           </p>
         </div>
 

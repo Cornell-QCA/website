@@ -15,13 +15,13 @@ const Blurb: React.FC = () => {
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Who We Are</h3>
                 <div className="text-sm sm:text-base leading-relaxed text-gray-700 space-y-3 sm:space-y-4">
                     <p>
-                        The Quantum Computing Association at Cornell University (QCA) is an
+                        Founded in 2023, the Quantum Computing Association at Cornell University (QCA) is an
                         undergraduate student organization that provides opportunities in quantum
                         computing. 
                     </p>
                     <p>
-                        We conduct an introductory series of lectures on quantum computing open to the public, and we pursue research
-                        projects with active project members. We work to foster collaboration between different university quantum computing groups.
+                        Our members come from diverse academic backgrounds, including computer science, physics, mathematics, and
+                        engineering, and work together to explore quantum computing.
                     </p>
                 </div>
             </div>
@@ -52,8 +52,7 @@ const Blurb: React.FC = () => {
             {/* Call to action text */}
             <div className="mb-6 sm:mb-8">
                 <p className="text-sm sm:text-base leading-relaxed text-gray-700">
-                    Join us via the link below to stay informed and access the newest opportunities to make an impact in the quantum computing 
-                    community.
+                    Join us via the link below to stay informed and hear about upcoming quantum events at Cornell!
                 </p>
             </div>
 

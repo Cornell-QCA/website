@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
                     <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
                     <div className="w-24 h-px bg-qca_red_dark-500 mx-auto mb-6"></div>
                     <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                        Get in touch with us! Whether you have questions, feedback, or want to get involved, we'd love to hear from you.
+                        Get in touch with us!
                     </p>
                 </div>
 
@@ -65,34 +65,6 @@ const Contact: React.FC = () => {
                                 </svg>
                             </a>
                         </div>
-                    </div>
-
-                    {/* Feedback Section */}
-                    <div className="bg-white rounded-lg shadow-md border border-gray-100 p-8 text-center">
-                        <div className="mb-6">
-                            <div className="w-16 h-16 bg-qca_red_dark-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg className="w-8 h-8 text-qca_red_dark-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                </svg>
-                            </div>
-                            <h3 className="text-2xl font-semibold text-gray-900 mb-3">Share Your Feedback</h3>
-                            <p className="text-gray-700 leading-relaxed max-w-2xl mx-auto">
-                                Help us improve! Your feedback is invaluable in making QCA better for everyone. 
-                                Whether it's suggestions for events, topics you'd like to learn about, or general comments, 
-                                we want to hear from you.
-                            </p>
-                        </div>
-                        <a 
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSdeWrH2-RdOJu3I_snCvQfZeDlJ9i-R3bJKfbC9JIYJAjFEAw/viewform"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center px-8 py-3 bg-qca_red_dark-500 text-white rounded-lg hover:bg-qca_red_dark-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 font-medium"
-                        >
-                            Submit Feedback
-                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </a>
                     </div>
                 </div>
             </div>

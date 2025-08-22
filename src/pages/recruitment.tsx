@@ -12,13 +12,13 @@ const Apply: React.FC = () => {
                     <div className="w-24 h-px bg-qca_red_dark-500 mx-auto mb-6"></div>
                     <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
                         All QCA subteams are recruiting new members for Fall 2025! 
-                        Follow our recruitment timeline below to join our community.
+                        Follow our recruitment timeline below to join our team
                     </p>
                 </div>
 
                 {/* Call to Action */}
                 <div className='flex justify-center mb-16'>
-                    <button className="text-lg px-12 py-4 bg-qca_red_dark-500 text-white rounded-lg hover:bg-qca_red_dark-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200" onClick={() => window.open('https://forms.gle/yRWfJwQL3FxruKEM8', '_blank')}>
+                    <button className="text-lg px-12 py-4 bg-qca_red_dark-500 text-white rounded-lg hover:bg-qca_red_dark-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200" onClick={() => window.open('https://www.cornellqca.com', '_blank')}>
                         Apply Now!
                     </button>
                 </div>
