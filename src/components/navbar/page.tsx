@@ -13,12 +13,17 @@ const Navbar: React.FC = () => {
 
     const controlNavbar = () => {
         if (typeof window !== 'undefined') {
-            if (window.scrollY > lastScrollY) { // if scrolling down
+            const currentScrollY = window.scrollY;
+            
+            // Always show navbar when at the top of the page
+            if (currentScrollY <= 10) {
+                setIsVisible(true);
+            } else if (currentScrollY > lastScrollY) { // if scrolling down
                 setIsVisible(false);
             } else { // if scrolling up
                 setIsVisible(true);
             }
-            setLastScrollY(window.scrollY);
+            setLastScrollY(currentScrollY);
         }
     };
 

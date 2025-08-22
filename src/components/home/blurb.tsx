@@ -17,14 +17,11 @@ const Blurb: React.FC = () => {
                     <p>
                         The Quantum Computing Association at Cornell University (QCA) is an
                         undergraduate student organization that provides opportunities in quantum
-                        computing. We conduct an introductory series of lectures on quantum computing
-                        open to the public, and we pursue research projects with active project members.
-                        Additionally, we facilitate collaboration between other universities interested
-                        in quantum computing, and are proud members of the Quantum Coalition.
+                        computing. 
                     </p>
                     <p>
-                        {/* At Carnegie Mellon Quantum Computing (QC @ CMU), we're the first and only student-led organization dedicated to fostering a  */}
-                        {/* vibrant quantum community and advancing quantum literacy and research on campus. */}
+                        We conduct an introductory series of lectures on quantum computing open to the public, and we pursue research
+                        projects with active project members. We work to foster collaboration between different university quantum computing groups.
                     </p>
                 </div>
             </div>

@@ -14,7 +14,7 @@ const Logo: React.FC = () => {
       </div>
 
       <div className="relative z-10 flex flex-col justify-center items-center h-full p-4 sm:p-6 md:p-8 text-center">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4 leading-tight">
+        <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4 leading-tight">
           Quantum Computing Association @ Cornell
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-2xl px-2">

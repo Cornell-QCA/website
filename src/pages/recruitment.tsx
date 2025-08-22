@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Apply: React.FC = () => {
-    const isRecruiting = false;
+    const isRecruiting = true;
 
     return isRecruiting ? (
         <div className='max-w-screen-xl mx-auto'>
@@ -51,9 +51,9 @@ const Apply: React.FC = () => {
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Information Sessions</h4>
                                 <p className="text-gray-700 leading-relaxed">
                                     Information sessions will be held at{' '}
-                                    <span className="font-semibold text-gray-900">5pm on Sunday, September 8th, 2024</span>{' '}
+                                    <span className="font-semibold text-gray-900">TBA, 2025</span>{' '}
                                     and{' '}
-                                    <span className="font-semibold text-gray-900">5pm on Monday, September 9th, 2024</span>{' '}
+                                    <span className="font-semibold text-gray-900">TBA, 2025</span>{' '}
                                     in Phillips 219.
                                 </p>
                             </div>
@@ -70,7 +70,7 @@ const Apply: React.FC = () => {
                                     </p>
                                     <p>
                                         Applications are due on{' '}
-                                        <span className="font-semibold text-gray-900">Thursday, January 30th at 11:59pm</span>.{' '}
+                                        <span className="font-semibold text-gray-900">TBA at 11:59pm</span>.{' '}
                                         Candidates will be contacted to schedule interviews after all applications are reviewed.
                                     </p>
                                 </div>
