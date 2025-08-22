@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Figtree', 'sans-serif'],
+      },
       colors: {
         qca_red_dark: {
           100: '#FAD0D0',

@@ -8,13 +8,18 @@ import Home from './Home';
 const App: React.FC = () => {
   return (
     <HashRouter>
-      <div className="flex flex-col items-center justify-center py-2">
+      <div className="min-h-screen">
         <Navbar />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/coffee" element={<CoffeeChats />} />
-        </Routes>
+        
+        {/* Add top padding to account for fixed navbar and center content */}
+        <div className="pt-20">
+          <div className="flex flex-col items-center justify-center">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/coffee" element={<CoffeeChats />} />
+            </Routes>
+          </div>
+        </div>
 
         <footer className="flex items-center justify-center w-full h-24 border-t text-sm">
           © 2024 Quantum Computing Association at Cornell. This organization is a

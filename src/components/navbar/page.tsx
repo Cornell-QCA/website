@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { HashLink } from 'react-router-hash-link';
 import Sidebar from './sidebar';
 
 const Navbar: React.FC = () => {
@@ -32,18 +33,54 @@ const Navbar: React.FC = () => {
         }
     }, [lastScrollY]);
 
+    const navigationItems = [
+        { to: "/#home", label: "Home" },
+        { to: "/#events", label: "Events" },
+        { to: "/#projects", label: "Projects" },
+        { to: "/#people", label: "Team" },
+        { to: "/#calendar", label: "Calendar" },
+        { to: "/#blurb", label: "Educational" },
+        { to: "/#links", label: "Contact" },
+    ];
+
     return (
-
         <>
-            <nav className="fixed top-0 right-0 p-4 z-50">
-                <button
-                    onClick={toggleSidebar}
-                    className={`text-3xl focus:outline-none z-50 fixed top-0 right-0 p-4 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
-                >
+            {/* Top Navigation Bar */}
+            <nav className={`fixed top-0 left-0 right-0 shadow-sm z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} style={{ backgroundColor: '#E6E8E6' }}>
+                <div className="max-w-7xl mx-auto flex items-center justify-center px-6 py-4 relative">
+                    {/* Logo/Brand - Positioned more toward center-left */}
+                    <div className="absolute left-32 flex items-center">
+                        <img 
+                            src="/logo.png" 
+                            alt="QCA @ Cornell" 
+                            className="h-12 w-auto"
+                        />
+                    </div>
 
-                    &#9776; {/* Hamburger menu icon */}
-                </button>
+                    {/* Desktop Navigation - Positioned more to the right */}
+                    <div className="hidden md:flex items-center space-x-4 ml-32">
+                        {navigationItems.map((item) => (
+                            <HashLink
+                                key={item.to}
+                                to={item.to}
+                                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-lg"
+                            >
+                                {item.label}
+                            </HashLink>
+                        ))}
+                    </div>
+
+                    {/* Mobile Hamburger Menu - Only visible on mobile, positioned on the right */}
+                    <button
+                        onClick={toggleSidebar}
+                        className="md:hidden absolute right-6 text-3xl text-gray-700 hover:text-red-600 focus:outline-none"
+                    >
+                        &#9776;
+                    </button>
+                </div>
             </nav>
+
+            {/* Mobile Sidebar */}
             <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
         </>
     );
