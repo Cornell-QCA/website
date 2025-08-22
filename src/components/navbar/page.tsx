@@ -50,11 +50,13 @@ const Navbar: React.FC = () => {
                 <div className="max-w-7xl mx-auto flex items-center justify-center px-6 py-4 relative">
                     {/* Logo/Brand - Positioned more toward center-left */}
                     <div className="absolute left-32 flex items-center">
-                        <img 
-                            src="/logo.png" 
-                            alt="QCA @ Cornell" 
-                            className="h-12 w-auto"
-                        />
+                        <Link to="/">
+                            <img 
+                                src="/logo.png" 
+                                alt="QCA @ Cornell" 
+                                className="h-12 w-auto hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+                            />
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation - Positioned more to the right */}

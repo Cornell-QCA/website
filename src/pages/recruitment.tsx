@@ -10,7 +10,7 @@ const Apply: React.FC = () => {
             <h2 className="text-4xl font-bold text-center mb-8">Recruitment</h2>
             <p className="text-lg text-center mb-12">
                 All QCA subteams are recruiting new members for
-                Fall 2024! The full timeline is shown below.
+                Fall 2025! The full timeline is shown below.
             </p>
 
             <div className='flex justify-center text-lg mb-8'>
