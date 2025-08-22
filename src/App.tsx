@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <Navbar />
         
         {/* Add top padding to account for fixed navbar and center content */}
-        <div className="pt-20">
+        <div className="pt-16 sm:pt-20">
           <div className="flex flex-col items-center justify-center">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -33,9 +33,11 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <footer className="flex items-center justify-center w-full h-24 border-t text-sm">
-          © 2025 Quantum Computing Association at Cornell. This organization is a
-          registered student organization of Cornell University.
+        <footer className="flex items-center justify-center w-full min-h-[6rem] border-t text-xs sm:text-sm px-4 py-6 mt-8">
+          <p className="text-center text-gray-600 leading-relaxed max-w-2xl">
+            © 2025 Quantum Computing Association at Cornell. This organization is a
+            registered student organization of Cornell University.
+          </p>
         </footer>
       </div>
     </HashRouter>

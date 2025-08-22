@@ -47,38 +47,40 @@ const Navbar: React.FC = () => {
         <>
             {/* Top Navigation Bar */}
             <nav className={`fixed top-0 left-0 right-0 shadow-sm z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} style={{ backgroundColor: '#F4F5F7' }}>
-                <div className="max-w-7xl mx-auto flex items-center justify-center px-6 py-4 relative">
-                    {/* Logo/Brand - Positioned more toward center-left */}
-                    <div className="absolute left-32 flex items-center">
-                        <Link to="/">
-                            <img 
-                                src="/logo.png" 
-                                alt="QCA @ Cornell" 
-                                className="h-12 w-auto hover:opacity-80 transition-opacity duration-200 cursor-pointer"
-                            />
-                        </Link>
-                    </div>
-
-                    {/* Desktop Navigation - Positioned more to the right */}
-                    <div className="hidden md:flex items-center space-x-4 ml-32">
-                        {navigationItems.map((item) => (
-                            <Link
-                                key={item.to}
-                                to={item.to}
-                                className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-lg"
-                            >
-                                {item.label}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+                    <div className="flex items-center justify-between">
+                        {/* Logo/Brand - Responsive positioning */}
+                        <div className="flex items-center">
+                            <Link to="/">
+                                <img 
+                                    src="/logo.png" 
+                                    alt="QCA @ Cornell" 
+                                    className="h-10 sm:h-12 w-auto hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+                                />
                             </Link>
-                        ))}
-                    </div>
+                        </div>
 
-                    {/* Mobile Hamburger Menu - Only visible on mobile, positioned on the right */}
-                    <button
-                        onClick={toggleSidebar}
-                        className="md:hidden absolute right-6 text-3xl text-gray-700 hover:text-red-600 focus:outline-none"
-                    >
-                        &#9776;
-                    </button>
+                        {/* Desktop Navigation - Hidden on mobile */}
+                        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+                            {navigationItems.map((item) => (
+                                <Link
+                                    key={item.to}
+                                    to={item.to}
+                                    className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-base lg:text-lg whitespace-nowrap"
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Mobile Hamburger Menu - Only visible on mobile */}
+                        <button
+                            onClick={toggleSidebar}
+                            className="md:hidden text-2xl sm:text-3xl text-gray-700 hover:text-red-600 focus:outline-none transition-colors duration-200"
+                        >
+                            &#9776;
+                        </button>
+                    </div>
                 </div>
             </nav>
 

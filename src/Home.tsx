@@ -5,7 +5,7 @@ import Logo from './components/home/logo'
 const Home: React.FC = () => {
     return (
         <>
-            <div className='max-w-screen-xl'>
+            <div className='w-full max-w-screen-xl mx-auto'>
                 <div id="home">
                     <Logo />
                 </div>

@@ -10,4 +10,28 @@
     font-family: 'Figtree', sans-serif;
     background-color: #F8F9FA;
   }
+  
+  /* Ensure proper viewport behavior on mobile */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  /* Custom mobile-first utilities */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Ensure buttons are properly sized for mobile */
+  .btn-mobile {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
