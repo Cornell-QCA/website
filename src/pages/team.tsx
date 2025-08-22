@@ -32,43 +32,66 @@ const People: React.FC = () => {
     };
 
     return (
-        <div className='max-w-screen-xl'>
-            <div className="container mx-auto py-8">
-                <h1 className="text-4xl font-bold text-center mb-4">People</h1>
-                <p className="text-center text-gray-600 mb-8">
-                </p>
-
-                <div className="flex justify-center mb-8">
-                    <button
-                        onClick={() => handleTabChange('member')}
-                        className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'member' ? 'text-qca_red_dark-400' : ' border-white'}`}
-                    >
-                        Members
-                    </button>
-                    <button
-                        onClick={() => handleTabChange('advisor')}
-                        className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'advisor' ? 'text-qca_red_dark-400' : ''}`}
-                    >
-                        Faculty
-                    </button>
-                    <button
-                        onClick={() => handleTabChange('alumni')}
-                        className={`px-4 py-2 mx-2 font-semibold ${activeTab === 'alumni' ? 'text-qca_red_dark-400' : ''}`}
-                    >
-                        Alumni
-                    </button>
+        <div className='max-w-screen-xl mx-auto'>
+            <div className="px-6 py-8">
+                {/* Header Section */}
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h1>
+                    <div className="w-24 h-px bg-qca_red_dark-500 mx-auto mb-6"></div>
+                    <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                        Meet the passionate individuals driving quantum computing research and education at Cornell.
+                    </p>
                 </div>
 
-                <div className="place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    {filteredPeople.map((person, index) => (
-                        <Card
-                            key={index}
-                            image={person.linkedin}
-                            title={person.name}
-                            subtitle={person.title}
-                            link={`https://www.linkedin.com/in/${person.linkedin}`}
-                        />
-                    ))}
+                {/* Tab Navigation */}
+                <div className="flex justify-center mb-12">
+                    <div className="inline-flex bg-gray-100 rounded-lg p-1">
+                        <button
+                            onClick={() => handleTabChange('member')}
+                            className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                                activeTab === 'member' 
+                                    ? 'bg-qca_red_dark-500 text-white shadow-sm' 
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            Members
+                        </button>
+                        <button
+                            onClick={() => handleTabChange('advisor')}
+                            className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                                activeTab === 'advisor' 
+                                    ? 'bg-qca_red_dark-500 text-white shadow-sm' 
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            Faculty
+                        </button>
+                        <button
+                            onClick={() => handleTabChange('alumni')}
+                            className={`px-6 py-2 rounded-md font-medium transition-all duration-200 ${
+                                activeTab === 'alumni' 
+                                    ? 'bg-qca_red_dark-500 text-white shadow-sm' 
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            Alumni
+                        </button>
+                    </div>
+                </div>
+
+                {/* People Grid */}
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {filteredPeople.map((person, index) => (
+                            <Card
+                                key={index}
+                                image={person.linkedin}
+                                title={person.name}
+                                subtitle={person.title}
+                                link={`https://www.linkedin.com/in/${person.linkedin}`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
