@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Apply: React.FC = () => {
-    const isRecruiting = true;
+    const isRecruiting = false;
 
     return isRecruiting ? (
         <div className='max-w-screen-xl mx-auto'>
