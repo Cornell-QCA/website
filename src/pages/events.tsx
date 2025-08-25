@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
+import { marked } from 'marked';
 
 interface EventData {
+    name: string;
+    timeline: string;
+    location: string;
     file: string;
-    desc: string;
-    date?: string;
-    time?: string;
-    location?: string;
-    fullDescription?: string;
+    image: string;
     type: 'upcoming' | 'previous';
 }
 
 const Events: React.FC = () => {
     const [events, setEvents] = useState<EventData[]>([]);
     const [filteredEvents, setFilteredEvents] = useState<EventData[]>([]);
+    const [eventDescriptions, setEventDescriptions] = useState<React.ReactNode[]>([]);
     const [activeTab, setActiveTab] = useState<'upcoming' | 'previous'>('upcoming');
 
     useEffect(() => {
@@ -21,25 +22,32 @@ const Events: React.FC = () => {
         Papa.parse('data/csv/events.csv', {
             download: true,
             header: true,
-            complete: (result: any) => {
-                // Process events and categorize them as upcoming or previous
-                const processedEvents: EventData[] = result.data.map((event: any) => ({
-                    ...event,
-                    type: determineEventType(event.desc),
-                    date: getEventDate(event.desc),
-                    time: getEventTime(event.desc),
-                    location: getEventLocation(event.desc),
-                    fullDescription: getEventDescription(event.desc)
-                }));
+            complete: async (result: any) => {
+                const eventData = result.data;
+                setEvents(eventData);
+
+                // Fetch and parse markdown files
+                const descriptions = await Promise.all(
+                    eventData.map(async (event: EventData) => {
+                        try {
+                            const response = await fetch(`data/events/${event.file}.md`);
+                            const markdown = await response.text();
+                            return <div dangerouslySetInnerHTML={{ __html: marked(markdown) }} />;
+                        } catch (error) {
+                            console.error(`Failed to load description for ${event.file}:`, error);
+                            return <div>More details coming soon.</div>;
+                        }
+                    })
+                );
+                setEventDescriptions(descriptions);
                 
-                setEvents(processedEvents);
                 // Start with upcoming events tab if there are any, otherwise show previous
-                const upcomingEvents = processedEvents.filter(e => e.type === 'upcoming');
+                const upcomingEvents = eventData.filter((e: EventData) => e.type === 'upcoming');
                 if (upcomingEvents.length > 0) {
                     setFilteredEvents(upcomingEvents);
                     setActiveTab('upcoming');
                 } else {
-                    setFilteredEvents(processedEvents.filter(e => e.type === 'previous'));
+                    setFilteredEvents(eventData.filter((e: EventData) => e.type === 'previous'));
                     setActiveTab('previous');
                 }
             },
@@ -48,56 +56,13 @@ const Events: React.FC = () => {
 
     const handleTabChange = (type: 'upcoming' | 'previous') => {
         setActiveTab(type);
-        setFilteredEvents(events.filter((event) => event.type === type));
-    };
-
-    // Helper function to determine if event is upcoming or previous
-    const determineEventType = (desc: string): 'upcoming' | 'previous' => {
-        if (desc.includes("'25")) return 'upcoming';
-        return 'previous';
-    };
-
-    // Helper functions to extract event details (in real app, this data would be in CSV)
-    const getEventDate = (desc: string): string => {
-        if (desc.includes("Fall Fest '23")) return 'October 15, 2023 - October 16, 2023';
-        if (desc.includes("Fall Fest '24")) return 'October 14, 2024 - October 15, 2024';
-        if (desc.includes("Fall Fest '25")) return 'October 13, 2025 - October 14, 2025';
-        if (desc.includes('Mehta Lab')) return 'March 20, 2024';
-        if (desc.includes('Summer NME')) return 'July 10, 2024';
-        return 'TBA';
-    };
-
-    const getEventTime = (desc: string): string => {
-        if (desc.includes('Fall Fest')) return 'All day';
-        if (desc.includes('Mehta Lab')) return '2:00 PM';
-        if (desc.includes('Summer NME')) return '10:00 AM';
-        return 'TBA';
-    };
-
-    const getEventLocation = (desc: string): string => {
-        if (desc.includes('Fall Fest')) return 'Virtual & Cornell Campus';
-        if (desc.includes('Mehta Lab')) return 'Mehta Laboratory, Clark Hall';
-        if (desc.includes('Summer NME')) return 'Phillips Hall';
-        return 'TBA';
-    };
-
-    const getEventDescription = (desc: string): string => {
-        if (desc.includes("Fall Fest '23")) {
-            return 'We hosted Qiskit Fall Fest, an event series run by IBM Quantum, featuring workshops and guest speakers focused on quantum computing';
+        const filtered = events.filter((event) => event.type === type);
+        // Reverse the order for previous events to show most recent first
+        if (type === 'previous') {
+            setFilteredEvents(filtered.reverse());
+        } else {
+            setFilteredEvents(filtered);
         }
-        if (desc.includes("Fall Fest '24")) {
-            return 'We hosted Qiskit Fall Fest, an event series run by IBM Quantum, featuring workshops and guest speakers focused on quantum computing';
-        }
-        if (desc.includes("Fall Fest '25")) {
-            return 'We\'re hosting Qiskit Fall Fest, an event series run by IBM Quantum, featuring workshops and guest speakers focused on quantum computing';
-        }
-        if (desc.includes('Mehta Lab')) {
-            return 'Members toured the Mehta Laboratory to see cutting-edge quantum research facilities and learn about ongoing quantum experiments at Cornell';
-        }
-        if (desc.includes('Summer NME')) {
-            return 'Our summer workshop series focused on quantum computing fundamentals, covering topics from basic quantum mechanics to advanced quantum algorithms';
-        }
-        return 'More details coming soon.';
     };
 
     return (
@@ -149,8 +114,8 @@ const Events: React.FC = () => {
                                         <div className="md:w-1/3">
                                             <div className="h-48 md:h-full">
                                                 <img
-                                                    src={`events/${event.file}.png`}
-                                                    alt={event.desc}
+                                                    src={`events/${event.image}.png`}
+                                                    alt={event.name}
                                                     className="w-full h-full object-cover"
                                                 />
                                             </div>
@@ -158,28 +123,24 @@ const Events: React.FC = () => {
                                         
                                         {/* Event Details */}
                                         <div className="md:w-2/3 p-6">
-                                            <h3 className="text-xl font-semibold text-gray-900 mb-4">{event.desc}</h3>
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-4">{event.name}</h3>
                                             
                                             {/* Event Info */}
                                             <div className="space-y-2 mb-4 text-sm">
                                                 <div className="flex items-center text-gray-600">
-                                                    <span className="font-medium w-16">Date:</span>
-                                                    <span>{event.date}</span>
+                                                    <span className="font-medium w-20">Timeline:</span>
+                                                    <span>{event.timeline}</span>
                                                 </div>
                                                 <div className="flex items-center text-gray-600">
-                                                    <span className="font-medium w-16">Time:</span>
-                                                    <span>{event.time}</span>
-                                                </div>
-                                                <div className="flex items-center text-gray-600">
-                                                    <span className="font-medium w-16">Location:</span>
+                                                    <span className="font-medium w-20">Location:</span>
                                                     <span>{event.location}</span>
                                                 </div>
                                             </div>
                                             
                                             {/* Event Description */}
-                                            <p className="text-gray-700 leading-relaxed">
-                                                {event.fullDescription}
-                                            </p>
+                                            <div className="text-gray-700 leading-relaxed prose prose-sm max-w-none">
+                                                {eventDescriptions[events.findIndex(e => e.file === event.file)]}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +150,7 @@ const Events: React.FC = () => {
                         <div className="text-center py-12">
                             <div className="text-gray-400 mb-4">
                                 <svg className="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
                                 </svg>
                             </div>
                             <h3 className="text-lg font-medium text-gray-900 mb-2">

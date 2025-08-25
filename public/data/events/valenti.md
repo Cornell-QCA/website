@@ -1,0 +1,1 @@
+Dr. Valenti is a Quantum Software Developer from IBM Quantum. The talk is beginner friendly, and will discuss his day-to-day work at IBM
