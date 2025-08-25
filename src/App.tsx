@@ -9,7 +9,7 @@ import ProjectsPage from './pages/projects';
 import TeamPage from './pages/team';
 import EventsPage from './pages/events';
 import ContactPage from './pages/contact';
-import EducationalPage from './pages/education';
+import EducationPage from './pages/education';
 
 const App: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const App: React.FC = () => {
               <Route path="/team" element={<TeamPage />} />
               <Route path="/events" element={<EventsPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/educational" element={<EducationalPage />} />
+              <Route path="/education" element={<EducationPage />} />
             </Routes>
           </div>
         </div>

@@ -1,1 +1,1 @@
-Interested in quantum simulation. I research in the [Katz](https://iontrap.aep.cornell.edu/) and [Fatemi](https://fatemilab.aep.cornell.edu/) Lab and work on spin-boson QC simulation and QECC.
+Interested in open quantum dynamics and error correction. I work with Professor Katz and Fatemi

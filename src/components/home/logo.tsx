@@ -23,6 +23,8 @@ const Logo: React.FC = () => {
         <div className="flex space-x-4 sm:space-x-6">
           <a 
             href="https://www.github.com/Cornell-QCA" 
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
             className="text-gray-600 hover:text-gray-800 transition-colors duration-200"
           >
@@ -30,6 +32,8 @@ const Logo: React.FC = () => {
           </a>
           <a 
             href="https://www.instagram.com/cornellqca" 
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             className="text-gray-600 hover:text-gray-800 transition-colors duration-200"
           >
@@ -37,6 +41,8 @@ const Logo: React.FC = () => {
           </a>
           <a 
             href="https://www.linkedin.com/company/quantum-computing-association-at-cornell/" 
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
             className="text-gray-600 hover:text-gray-800 transition-colors duration-200"
           >
@@ -44,6 +50,8 @@ const Logo: React.FC = () => {
           </a>
           <a 
             href="https://discord.gg/HT5wWmFSGT" 
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Discord"
             className="text-gray-600 hover:text-gray-800 transition-colors duration-200"
           >

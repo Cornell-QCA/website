@@ -11,7 +11,7 @@ const Apply: React.FC = () => {
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Recruitment</h2>
                     <div className="w-24 h-px bg-qca_red_dark-500 mx-auto mb-6"></div>
                     <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                        All QCA subteams are recruiting new members for Fall 2025! 
+                        All QCA subteams are recruiting new members for Fall 2025!
                         Follow our recruitment timeline below to join our team
                     </p>
                 </div>
@@ -36,7 +36,7 @@ const Apply: React.FC = () => {
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Coffee Chats</h4>
                                 <p className="text-gray-700 leading-relaxed">
                                     If you want to learn more about QCA, feel free to schedule a{' '}
-                                    <a href="/coffee" className="text-qca_red_dark-500 hover:text-qca_red_dark-600 font-medium underline decoration-2 underline-offset-2">
+                                    <a href="#/coffee" target="_blank" rel="noopener noreferrer" className="text-qca_red_dark-500 hover:text-qca_red_dark-600 font-medium underline decoration-2 underline-offset-2">
                                         coffee chat
                                     </a>{' '}
                                     with a member! Coffee chats are optional but are strongly encouraged.
@@ -51,9 +51,8 @@ const Apply: React.FC = () => {
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Information Sessions</h4>
                                 <p className="text-gray-700 leading-relaxed">
                                     Information sessions will be held at{' '}
-                                    <span className="font-semibold text-gray-900">TBA, 2025</span>{' '}
-                                    and{' '}
-                                    <span className="font-semibold text-gray-900">TBA, 2025</span>{' '}
+                                    <span className="font-semibold text-gray-900">September 6th</span>{' '}
+                                    <span className="font-semibold text-gray-900">and 7th @ 5pm</span>{' '}
                                     in Phillips 219.
                                 </p>
                             </div>
@@ -70,7 +69,7 @@ const Apply: React.FC = () => {
                                     </p>
                                     <p>
                                         Applications are due on{' '}
-                                        <span className="font-semibold text-gray-900">TBA at 11:59pm</span>.{' '}
+                                        <span className="font-semibold text-gray-900">September 19th at 11:59pm</span>.{' '}
                                         Candidates will be contacted to schedule interviews after all applications are reviewed.
                                     </p>
                                 </div>
@@ -83,12 +82,26 @@ const Apply: React.FC = () => {
                             <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Interviews</h4>
                                 <p className="text-gray-700 leading-relaxed">
-                                    We will reach out to select applicants to conduct interviews over the following weeks. 
-                                    These will be both technical and behavioral. More information and interview materials will 
+                                    We will reach out to select applicants to conduct interviews over the following weeks.
+                                    These will be both technical and behavioral. More information and interview materials will
                                     be sent to selected applicants!
                                 </p>
                             </div>
                         </div>
+
+                        {/* Offer Date */}
+                        <div className="relative mb-8">
+                            <div className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-qca_red_dark-500 border-4 border-white shadow-lg"></div>
+                            <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
+                                <h4 className="text-xl font-semibold text-gray-900 mb-3">Offers</h4>
+                                <p className="text-gray-700 leading-relaxed">
+                                    After all interviews are completed, we will send out offers to our new members!
+                                    Our tentative offer date is <span className="font-semibold text-gray-900">September 29th</span>. 
+                                    This is subject to change, but it should remain fairly close to this date.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

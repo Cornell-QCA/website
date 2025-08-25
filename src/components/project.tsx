@@ -7,14 +7,51 @@ interface ProjectProps {
   children: React.ReactNode;
 }
 
+const getGroupColors = (group?: string) => {
+  switch (group?.toLowerCase()) {
+    case 'theory':
+      return {
+        badge: 'bg-qca_red_dark-100 text-qca_red_dark-700',
+        link: 'text-qca_red_dark-500 hover:text-qca_red_dark-600'
+      };
+    case 'hardware':
+      return {
+        badge: 'bg-qca_blue-100 text-qca_blue-700',
+        link: 'text-qca_blue-500 hover:text-qca_blue-600'
+      };
+    case 'algos':
+      return {
+        badge: 'bg-qca_green-100 text-qca_green-700',
+        link: 'text-qca_green-500 hover:text-qca_green-600'
+      };
+    case 'bizops':
+      return {
+        badge: 'bg-qca_purple-100 text-qca_purple-700',
+        link: 'text-qca_purple-500 hover:text-qca_purple-600'
+      };
+    case 'education':
+      return {
+        badge: 'bg-qca_orange-100 text-qca_orange-700',
+        link: 'text-qca_orange-500 hover:text-qca_orange-600'
+      };
+    default:
+      return {
+        badge: 'bg-gray-100 text-gray-700',
+        link: 'text-gray-500 hover:text-gray-600'
+      };
+  }
+};
+
 const Link: React.FC<ProjectProps> = ({ title, group, link, children }) => {
+  const colors = getGroupColors(group);
+  
   return (
     <div className="bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200 h-full">
       {/* Project Header */}
       <div className="mb-4">
         <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
         {group && (
-          <span className="inline-block px-3 py-1 bg-qca_red_dark-100 text-qca_red_dark-700 text-sm font-medium rounded-full">
+          <span className={`inline-block px-3 py-1 ${colors.badge} text-sm font-medium rounded-full`}>
             {group} Group
           </span>
         )}
@@ -32,7 +69,7 @@ const Link: React.FC<ProjectProps> = ({ title, group, link, children }) => {
             href={link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center text-qca_red_dark-500 hover:text-qca_red_dark-600 font-medium text-sm group"
+            className={`inline-flex items-center ${colors.link} font-medium text-sm group`}
           >
             View on GitHub
             <svg 

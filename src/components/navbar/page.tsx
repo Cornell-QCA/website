@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './sidebar';
 
 const Navbar: React.FC = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const location = useLocation();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    // Helper function to determine if a nav item is active
+    const isActive = (path: string) => {
+        if (path === '/') {
+            return location.pathname === '/';
+        }
+        // For coffee chat page, highlight recruitment instead
+        if (location.pathname === '/coffee') {
+            return path === '/recruitment';
+        }
+        return location.pathname === path;
     };
 
     const controlNavbar = () => {
@@ -43,7 +56,7 @@ const Navbar: React.FC = () => {
         { to: "/recruitment", label: "Recruitment" },
         { to: "/projects", label: "Projects" },
         { to: "/team", label: "Team" },
-        { to: "/educational", label: "Educational" },
+        { to: "/education", label: "Education" },
         { to: "/events", label: "Events" },
         { to: "/contact", label: "Contact" },
     ];
@@ -53,9 +66,9 @@ const Navbar: React.FC = () => {
             {/* Top Navigation Bar */}
             <nav className={`fixed top-0 left-0 right-0 shadow-sm z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} style={{ backgroundColor: '#F4F5F7' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-                    <div className="flex items-center justify-between">
-                        {/* Logo/Brand - Responsive positioning */}
-                        <div className="flex items-center">
+                    <div className="flex items-center">
+                        {/* Logo/Brand - Positioned with left margin for better spacing */}
+                        <div className="flex items-center ml-8 lg:ml-72">
                             <Link to="/">
                                 <img 
                                     src="/logo.png" 
@@ -65,23 +78,27 @@ const Navbar: React.FC = () => {
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation - Hidden on mobile */}
-                        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+                        {/* Desktop Navigation - Positioned to the right with margin-left auto */}
+                        <div className="hidden md:flex items-center space-x-6 lg:space-x-8 ml-auto">
                             {navigationItems.map((item) => (
                                 <Link
                                     key={item.to}
                                     to={item.to}
-                                    className="text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-base lg:text-lg whitespace-nowrap"
+                                    className={`text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-base lg:text-lg whitespace-nowrap ${
+                                        isActive(item.to) 
+                                            ? 'border-b-2 border-red-600 text-red-600' 
+                                            : ''
+                                    }`}
                                 >
                                     {item.label}
                                 </Link>
                             ))}
                         </div>
 
-                        {/* Mobile Hamburger Menu - Only visible on mobile */}
+                        {/* Mobile Hamburger Menu - Positioned to the right on mobile */}
                         <button
                             onClick={toggleSidebar}
-                            className="md:hidden text-2xl sm:text-3xl text-gray-700 hover:text-red-600 focus:outline-none transition-colors duration-200"
+                            className="md:hidden text-2xl sm:text-3xl text-gray-700 hover:text-red-600 focus:outline-none transition-colors duration-200 ml-auto"
                         >
                             &#9776;
                         </button>
