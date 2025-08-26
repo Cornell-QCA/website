@@ -1,1 +1,0 @@
-Interested in quantum hardware, math, and cs. I research in the [Yasuda Lab](https://www.aep.cornell.edu/faculty-directory/kenji-yasuda) and research 2D Nanomaterial fabrication.

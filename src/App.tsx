@@ -34,10 +34,18 @@ const App: React.FC = () => {
         </div>
 
         <footer className="flex items-center justify-center w-full min-h-[6rem] border-t text-xs sm:text-sm px-4 py-6 mt-8">
-          <p className="text-center text-gray-600 leading-relaxed max-w-2xl">
+            <p className="text-center text-gray-600 leading-relaxed max-w-2xl">
             © 2025 Quantum Computing Association at Cornell. This organization is a
-            registered student organization of Cornell University.
-          </p>
+            registered student organization of Cornell University.{' '}
+            <a 
+              href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
+              className="text-qca_red_dark-500 hover:text-qca_red_dark-600 font-medium underline decoration-2 underline-offset-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Equal Education and Employment
+            </a>
+            </p>
         </footer>
       </div>
     </HashRouter>

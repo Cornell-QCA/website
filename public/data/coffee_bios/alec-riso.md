@@ -1,1 +1,1 @@
-I love indians
+Interested in condensed matter quantum platforms, and currently studying graphene conductance. Researcher @ Katz + Fatemi Labs

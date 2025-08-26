@@ -6,6 +6,8 @@ interface Person {
     name: string;
     linkedin: string;
     title: string;
+    subteam: string;
+    eboard: string;
     club_status: string;
 }
 
@@ -29,6 +31,52 @@ const People: React.FC = () => {
     const handleTabChange = (status: string) => {
         setActiveTab(status);
         setFilteredPeople(people.filter((person) => person.club_status.toLowerCase() === status.toLowerCase()));
+    };
+
+    // Function to organize people by sections
+    const organizeBySubteam = (peopleList: Person[]) => {
+        const sections = {
+            eboard: peopleList.filter(person => 
+                person.eboard === 'true' && person.club_status.toLowerCase() !== 'alumni'
+            ),
+            theory: peopleList.filter(person => 
+                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('theory')
+            ),
+            hardware: peopleList.filter(person => 
+                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('hardware')
+            ),
+            algos: peopleList.filter(person => 
+                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('algos')
+            ),
+            bizops: peopleList.filter(person => 
+                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('business')
+            ),
+            education: peopleList.filter(person => 
+                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('education')
+            )
+        };
+        return sections;
+    };
+
+    const renderSection = (title: string, sectionPeople: Person[], showTitles: boolean = false) => {
+        if (sectionPeople.length === 0) return null;
+
+        return (
+            <div className="mb-12" key={title}>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{title}</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                    {sectionPeople.map((person, index) => (
+                        <Card
+                            key={index}
+                            image={person.linkedin}
+                            title={person.name}
+                            subtitle={showTitles ? person.title : undefined}
+                            link={`https://www.linkedin.com/in/${person.linkedin}`}
+                        />
+                    ))}
+                </div>
+            </div>
+        );
     };
 
     return (
@@ -81,17 +129,35 @@ const People: React.FC = () => {
 
                 {/* People Grid */}
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                        {filteredPeople.map((person, index) => (
-                            <Card
-                                key={index}
-                                image={person.linkedin}
-                                title={person.name}
-                                subtitle={person.title}
-                                link={`https://www.linkedin.com/in/${person.linkedin}`}
-                            />
-                        ))}
-                    </div>
+                    {activeTab === 'member' ? (
+                        // For members, organize by subteam
+                        (() => {
+                            const sections = organizeBySubteam(filteredPeople);
+                            return (
+                                <div>
+                                    {renderSection('Eboard', sections.eboard, true)}
+                                    {renderSection('Theory', sections.theory, false)}
+                                    {renderSection('Hardware', sections.hardware, false)}
+                                    {renderSection('Algos', sections.algos, false)}
+                                    {renderSection('BizOps', sections.bizops, false)}
+                                    {renderSection('Education', sections.education, false)}
+                                </div>
+                            );
+                        })()
+                    ) : (
+                        // For faculty and alumni, show as regular grid with titles
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                            {filteredPeople.map((person, index) => (
+                                <Card
+                                    key={index}
+                                    image={person.linkedin}
+                                    title={person.name}
+                                    subtitle={person.title}
+                                    link={`https://www.linkedin.com/in/${person.linkedin}`}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -1,1 +1,1 @@
-Interested in open quantum dynamics and error correction. I work with Professor Katz and Fatemi
+Interested in open quantum dynamics and error correction. Researcher @ Katz + Fatemi Labs

@@ -1,1 +1,1 @@
-Researcher @ Katz Lab
+Interested in the development of the QC industry and quantum sensing. Researcher @ Katz Lab
