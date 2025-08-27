@@ -1,30 +1,30 @@
 name,linkedin,title,subteam,eboard,club_status
-Haadi Khan,haadi-khan,President,theory,true,member
-Austin Wu,austin--wu,VP & Hardware Lead,hardware,true,member
-Emerson Moore,emerson-moore-643314316,Theory Lead,theory,true,member
 Ahan Mishra,ahan-mishra,Algos Lead,algos,true,member
-Arnab Ghosh,arnab-ghosh819,Education Lead,education,true,member
-Isabela Chaveztello,isabela-chaveztello,Business Lead,business,true,member
-Pranav K. Anoop,pranav-kurungod-anoop-6a23161aa,Algos Lead,"algos,education",true,member
-Ryan Byrne,ryan-byrne-300,Advisor,theory,true,alumni
-Avery Avila,averyavila,SWE @ Google,algos,true,alumni
-Nelson Ooi,nelson-ooi,Stanford ECE PhD,hardware,true,alumni
-Valla Fatemi,valla-fatemi,Club Advisor,theory,false,advisor
-Peter McMahon,peter-mcmahon,Club Advisor,hardware,false,advisor
-Or Katz,or-katz,Hardware Advisor,hardware,false,advisor
 Alec Riso,alec-riso,,theory,false,member
 Andranik Galoyan,andranik-galoyan-09220b211,,hardware,false,member
 Angela Bao,angela-bao-08760922b,,theory,false,member
+Arnab Ghosh,arnab-ghosh819,Education Lead,education,true,member
 Arnav Kaul,kaul-arnav,,algos,false,member
+Austin Wu,austin--wu,VP & Hardware Lead,hardware,true,member
+Avery Avila,averyavila,SWE @ Google,algos,true,alumni
 Boaz Ng,boaz-ng,,algos,false,member
 Bruno Chong,bruno-chong-625220284,,business,false,member
 Claire Shin,claire-shin-13b1b3211,,hardware,false,member
 Demetrios Gavalas,demetrios-gavalas,,hardware,false,member
+Emerson Moore,emerson-moore-643314316,Theory Lead,theory,true,member
+Haadi Khan,haadi-khan,President,theory,true,member
 Irwin Wang,irwin-wang-a97ab5308,,hardware,false,member
+Isabela Chaveztello,isabela-chaveztello,Business Lead,business,true,member
 Kevin Sullivan,kevin-sullivan-052bb729a,,theory,false,member
 Mason Drew,mason-drew-558ba92b4,,hardware,false,member
 Matt Can,matt-can-28925432b,,theory,false,member
+Nelson Ooi,nelson-ooi,Stanford ECE PhD,hardware,true,alumni
+Pranav K. Anoop,pranav-kurungod-anoop-6a23161aa,Algos Lead,"algos,education",true,member
+Ryan Byrne,ryan-byrne-300,Advisor,theory,true,alumni
 Saavan Shah,saavan-shah,,theory,false,member
 Shreyansh Kabir,shreykabir,,hardware,false,member
-William Liaw,william-liaw-1209881b1,,theory,false,member
 Victoria Shenderov,victoria-shenderov-229915255,,hardware,false,member
+William Liaw,william-liaw-1209881b1,,theory,false,member
+Valla Fatemi,valla-fatemi,Club Advisor,theory,false,advisor
+Peter McMahon,peter-mcmahon,Club Advisor,hardware,false,advisor
+Or Katz,or-katz,Hardware Advisor,hardware,false,advisor

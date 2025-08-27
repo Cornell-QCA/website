@@ -35,25 +35,64 @@ const People: React.FC = () => {
 
     // Function to organize people by sections
     const organizeBySubteam = (peopleList: Person[]) => {
+        // Helper function to safely parse subteams
+        const getSubteams = (subteamString: string) => {
+            if (!subteamString) return [];
+            // Remove quotes and split by comma, then trim whitespace
+            const result = subteamString.replace(/['"]/g, '').split(',').map(s => s.trim().toLowerCase());
+            return result;
+        };
+        
+        // Helper function to sort members with eboard lead first, then alphabetically
+        const sortWithLeadFirst = (members: Person[], leadTitle: string) => {
+            const leads = members.filter(person => 
+                person.title && person.title.toLowerCase().includes(leadTitle.toLowerCase())
+            );
+            const others = members
+                .filter(person => !person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+                .sort((a, b) => a.name.localeCompare(b.name));
+            
+            
+            // Sort leads alphabetically too, then add others
+            const sortedLeads = leads.sort((a, b) => a.name.localeCompare(b.name));
+            const result = [...sortedLeads, ...others];
+            return result;
+        };
+
+        // Helper function to sort eboard with President first
+        const sortEboard = (members: Person[]) => {
+            const president = members.find(person => 
+                person.title && person.title.toLowerCase().includes('president')
+            );
+            const others = members
+                .filter(person => !person.title || !person.title.toLowerCase().includes('president'))
+                .sort((a, b) => a.name.localeCompare(b.name));
+            
+            return president ? [president, ...others] : others;
+        };
+
         const sections = {
-            eboard: peopleList.filter(person => 
-                person.eboard === 'true' && person.club_status.toLowerCase() !== 'alumni'
-            ),
-            theory: peopleList.filter(person => 
-                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('theory')
-            ),
-            hardware: peopleList.filter(person => 
-                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('hardware')
-            ),
-            algos: peopleList.filter(person => 
-                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('algos')
-            ),
-            bizops: peopleList.filter(person => 
-                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('business')
-            ),
-            education: peopleList.filter(person => 
-                person.subteam.toLowerCase().split(',').map(s => s.trim()).includes('education')
-            )
+            eboard: sortEboard(peopleList.filter(person => 
+                person.eboard === 'true' && person.club_status.toLowerCase() === 'member'
+            )),
+            theory: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('theory') && person.club_status.toLowerCase() === 'member'
+            ), 'theory lead'),
+            hardware: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('hardware') && person.club_status.toLowerCase() === 'member'
+            ), 'hardware lead'),
+            algos: sortWithLeadFirst(peopleList.filter(person => {
+                const subteams = getSubteams(person.subteam);
+                const isAlgos = subteams.includes('algos');
+                const isMember = person.club_status.toLowerCase() === 'member';
+                return isAlgos && isMember;
+            }), 'algos lead'),
+            bizops: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('business') && person.club_status.toLowerCase() === 'member'
+            ), 'business lead'),
+            education: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('education') && person.club_status.toLowerCase() === 'member'
+            ), 'education lead')
         };
         return sections;
     };

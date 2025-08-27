@@ -1,1 +1,1 @@
-Interested in superconducting quantum devices and quantum optics. Research @ Fong Lab (Northeastern)
+Interested in superconducting quantum devices and quantum optics. Researcher @ Fong Lab (Northeastern)
