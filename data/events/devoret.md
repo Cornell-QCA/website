@@ -1,0 +1,1 @@
+Join us for a fireside chat with Michel Devoret, creator of the transmon qubit — the architecture behind Google and IBM's quantum processors

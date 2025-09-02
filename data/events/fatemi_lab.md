@@ -1,0 +1,1 @@
+Members will tour the Fatemi Laboratory to see cutting-edge quantum research facilities and learn about ongoing quantum experiments at Cornell

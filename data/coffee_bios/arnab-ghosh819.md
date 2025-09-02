@@ -1,0 +1,1 @@
+Interested in quantum algorithms, simulation, and programming languages. Quantum @ HRL Labs

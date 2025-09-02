@@ -1,0 +1,1 @@
+Interested in quantum computing structure and applications. Researcher @ Katz Lab

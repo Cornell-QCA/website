@@ -1,1 +1,0 @@
-Interested in quantum information science (both hardware & software). I research in the [Fatemi Lab](https://fatemilab.aep.cornell.edu/) and work on CQED simulation.
