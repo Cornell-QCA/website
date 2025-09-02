@@ -112,11 +112,11 @@ const Events: React.FC = () => {
                                     <div className="md:flex">
                                         {/* Event Image */}
                                         <div className="md:w-1/3">
-                                            <div className="h-48 md:h-full">
+                                            <div className="h-full">
                                                 <img
                                                     src={`events/${event.image}.png`}
                                                     alt={event.name}
-                                                    className="w-full h-full object-cover"
+                                                    className="w-full h-full object-cover object-center"
                                                 />
                                             </div>
                                         </div>

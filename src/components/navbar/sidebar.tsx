@@ -26,7 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
     { to: "/recruitment", label: "Recruitment" },
     { to: "/projects", label: "Projects" },
     { to: "/team", label: "Team" },
-    { to: "/education", label: "Education" },
+    // { to: "/education", label: "Education" },
     { to: "/events", label: "Events" },
     { to: "/contact", label: "Contact" },
   ];
@@ -41,7 +41,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       <div
         className={`fixed top-0 right-0 h-full w-64 sm:w-72 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          } z-40 shadow-lg`}
+          } z-40 shadow-lg flex flex-col`}
         style={{ backgroundColor: '#F4F5F7' }}
       >
         {/* Close button */}
@@ -55,14 +55,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
         
-        <nav className="px-4 space-y-2">
+        {/* Navigation items */}
+        <nav className="px-4 space-y-2 flex-1">
           {navigationItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               className={`block px-4 py-3 rounded-md transition-colors duration-200 font-medium ${
                 isActive(item.to)
-                  ? 'bg-red-100 text-red-600 border-l-4 border-red-600'
+                  ? 'text-red-600 border-l-4 border-red-600'
                   : 'text-gray-700 hover:bg-gray-200'
               }`}
               onClick={onClose}
@@ -71,6 +72,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </Link>
           ))}
         </nav>
+
+        <div className="p-4 pt-0">
+          <Link
+            to="/coffee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-red-600 text-white text-center px-4 py-3 rounded-md hover:bg-red-700 transition-colors duration-200 font-medium"
+            onClick={onClose}
+          >
+            Coffee Chat!
+          </Link>
+        </div>
       </div>
     </>
   );

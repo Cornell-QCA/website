@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
         { to: "/recruitment", label: "Recruitment" },
         { to: "/projects", label: "Projects" },
         { to: "/team", label: "Team" },
-        { to: "/education", label: "Education" },
+        // { to: "/education", label: "Education" },
         { to: "/events", label: "Events" },
         { to: "/contact", label: "Contact" },
     ];
@@ -66,9 +66,8 @@ const Navbar: React.FC = () => {
             {/* Top Navigation Bar */}
             <nav className={`fixed top-0 left-0 right-0 shadow-sm z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} style={{ backgroundColor: '#F4F5F7' }}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-                    <div className="flex items-center">
-                        {/* Logo/Brand - Positioned with left margin for better spacing */}
-                        <div className="flex items-center ml-8 lg:ml-72">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center">
                             <Link to="/">
                                 <img 
                                     src="/logo.png" 
@@ -78,8 +77,7 @@ const Navbar: React.FC = () => {
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation - Positioned to the right with margin-left auto */}
-                        <div className="hidden md:flex items-center space-x-6 lg:space-x-8 ml-auto">
+                        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
                             {navigationItems.map((item) => (
                                 <Link
                                     key={item.to}
@@ -95,13 +93,24 @@ const Navbar: React.FC = () => {
                             ))}
                         </div>
 
-                        {/* Mobile Hamburger Menu - Positioned to the right on mobile */}
-                        <button
-                            onClick={toggleSidebar}
-                            className="md:hidden text-2xl sm:text-3xl text-gray-700 hover:text-red-600 focus:outline-none transition-colors duration-200 ml-auto"
-                        >
-                            &#9776;
-                        </button>
+                        <div className="flex items-center">
+                            <Link
+                                to="/coffee"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hidden md:block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors duration-200 font-medium"
+                            >
+                                Coffee Chat!
+                            </Link>
+
+                            {/* Mobile Hamburger Menu */}
+                            <button
+                                onClick={toggleSidebar}
+                                className="md:hidden text-2xl sm:text-3xl text-gray-700 hover:text-red-600 focus:outline-none transition-colors duration-200"
+                            >
+                                &#9776;
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>

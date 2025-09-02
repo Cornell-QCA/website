@@ -18,7 +18,7 @@ const Apply: React.FC = () => {
 
                 {/* Call to Action */}
                 <div className='flex justify-center mb-16'>
-                    <button className="text-lg px-12 py-4 bg-qca_red_dark-500 text-white rounded-lg hover:bg-qca_red_dark-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200" onClick={() => window.open('https://www.cornellqca.com', '_blank')}>
+                    <button className="text-lg px-12 py-4 bg-qca_red_dark-500 text-white rounded-lg hover:bg-qca_red_dark-600 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200" onClick={() => window.open('https://forms.gle/jyCjxkbUAPkNmC2J7', '_blank')}>
                         Apply Now!
                     </button>
                 </div>
@@ -27,7 +27,7 @@ const Apply: React.FC = () => {
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">Recruitment Timeline</h3>
                     <div className="relative">
-                        <div className="absolute left-8 top-16 w-0.5 bg-gradient-to-b from-qca_red_dark-500 to-qca_red_dark-300" style={{height: 'calc(100% - 8rem)'}}></div>
+                        <div className="absolute left-8 md:top-16 top-28 w-0.5 bg-gradient-to-b from-qca_red_dark-500 to-qca_red_dark-300 md:h-[calc(100%-8rem)] h-[calc(100%-15rem)]"></div>
 
                         {/* Coffee Chats */}
                         <div className="relative mb-8">
