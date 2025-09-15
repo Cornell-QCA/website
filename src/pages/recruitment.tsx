@@ -50,9 +50,8 @@ const Apply: React.FC = () => {
                             <div className="ml-20 bg-white rounded-lg shadow-md border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-200">
                                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Information Sessions</h4>
                                 <p className="text-gray-700 leading-relaxed">
-                                    Information sessions will be held at{' '}
-                                    <span className="font-semibold text-gray-900">September 6th</span>{' '}
-                                    <span className="font-semibold text-gray-900">and 7th @ 5pm</span>{' '}
+                                    Our information session will be held on{' '}
+                                    <span className="font-semibold text-gray-900">September 17th @ 5PM</span>{' '}
                                     in Phillips 219.
                                 </p>
                             </div>
