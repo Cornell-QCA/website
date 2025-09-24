@@ -52,7 +52,7 @@ const Apply: React.FC = () => {
                                 <p className="text-gray-700 leading-relaxed">
                                     Our information session will be held on{' '}
                                     <span className="font-semibold text-gray-900">September 17th @ 5PM</span>{' '}
-                                    in Phillips 219.
+                                    in Phillips 407.
                                 </p>
                             </div>
                         </div>
