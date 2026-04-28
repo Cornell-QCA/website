@@ -21,9 +21,11 @@ const People: React.FC = () => {
         Papa.parse('data/csv/people.csv', {
             download: true,
             header: true,
+            skipEmptyLines: true,
             complete: (result: any) => {
-                setPeople(result.data);
-                setFilteredPeople(result.data.filter((person: Person) => person.club_status.toLowerCase() === 'member'));
+                const validPeople = result.data.filter((p: Person) => p && p.club_status);
+                setPeople(validPeople);
+                setFilteredPeople(validPeople.filter((person: Person) => person.club_status.toLowerCase() === 'member'));
             },
         });
     }, []);

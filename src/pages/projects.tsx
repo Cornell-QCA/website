@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 import Link from '../components/project';
 
 interface ProjectData {
@@ -8,36 +9,52 @@ interface ProjectData {
   group: string;
   file: string;
   link: string;
+  status: 'active' | 'past';
+  descriptionNode?: React.ReactNode;
 }
 
 const Projects: React.FC = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
-  const [projectDescriptions, setProjectDescriptions] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
-    Papa.parse('data/csv/projects.csv', {
+    Papa.parse('/data/csv/projects.csv', {
       download: true,
       header: true,
+      skipEmptyLines: true,
       complete: async (result: any) => {
-        const projectData = result.data;
-        setProjects(projectData);
+        const projectData = result.data as ProjectData[];
 
         // Fetch and parse markdown files
-        const descriptions = await Promise.all(
-          projectData.map(async (project: ProjectData) => {
-            const response = await fetch(`data/projects/${project.file}.md`);
-            const markdown = await response.text();
-            return <div dangerouslySetInnerHTML={{ __html: marked(markdown) }} />;
+        const projectsWithDesc = await Promise.all(
+          projectData.map(async (project) => {
+            try {
+              const response = await fetch(`/data/projects/${project.file}.md`);
+              const markdown = await response.text();
+              const html = DOMPurify.sanitize(marked.parse(markdown) as string);
+              return {
+                ...project,
+                descriptionNode: <div dangerouslySetInnerHTML={{ __html: html }} />
+              };
+            } catch (error) {
+              return {
+                ...project,
+                descriptionNode: <div>Project details coming soon.</div>
+              };
+            }
           })
         );
-        setProjectDescriptions(descriptions);
+        setProjects(projectsWithDesc);
       },
     });
   }, []);
 
+  const activeProjects = projects.filter(p => p.status !== 'past');
+  const pastProjects = projects.filter(p => p.status === 'past');
+
   return (
     <div className='max-w-screen-xl mx-auto'>
       <div className="px-6 py-8">
+
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Projects</h1>
@@ -47,20 +64,45 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Link
-                key={index}
-                title={project.title}
-                group={project.group}
-                link={project.link}
-              >
-                {projectDescriptions[index]}
-              </Link>
-            ))}
-          </div>
+          {/* Active Projects Selection */}
+          {activeProjects.length > 0 && (
+            <div className="mb-16">
+              <h2 className="text-2xl font-bold text-gray-800 mb-8 border-b pb-2">Current Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {activeProjects.map((project, index) => (
+                  <Link
+                    key={`active-${index}`}
+                    title={project.title}
+                    group={project.group}
+                    link={project.link}
+                  >
+                    {project.descriptionNode}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Past Projects Selection */}
+          {pastProjects.length > 0 && (
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-8 border-b pb-2">Past Projects</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 opacity-90 transition-opacity hover:opacity-100">
+                {pastProjects.map((project, index) => (
+                  <Link
+                    key={`past-${index}`}
+                    title={project.title}
+                    group={project.group}
+                    link={project.link}
+                  >
+                    {project.descriptionNode}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
         </div>
       </div>
     </div>
