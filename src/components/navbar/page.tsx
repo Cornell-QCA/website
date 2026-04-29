@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
     const controlNavbar = () => {
         if (typeof window !== 'undefined') {
             const currentScrollY = window.scrollY;
-            
+
             // Always show navbar when at the top of the page
             if (currentScrollY <= 10) {
                 setIsVisible(true);
@@ -56,7 +56,6 @@ const Navbar: React.FC = () => {
         { to: "/recruitment", label: "Recruitment" },
         { to: "/projects", label: "Projects" },
         { to: "/team", label: "Team" },
-        // { to: "/education", label: "Education" },
         { to: "/events", label: "Events" },
         { to: "/contact", label: "Contact" },
     ];
@@ -69,9 +68,9 @@ const Navbar: React.FC = () => {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <Link to="/">
-                                <img 
-                                    src="/logo.png" 
-                                    alt="QCA @ Cornell" 
+                                <img
+                                    src="/logo.png"
+                                    alt="QCA @ Cornell"
                                     className="h-10 sm:h-12 w-auto hover:opacity-80 transition-opacity duration-200 cursor-pointer"
                                 />
                             </Link>
@@ -82,11 +81,10 @@ const Navbar: React.FC = () => {
                                 <Link
                                     key={item.to}
                                     to={item.to}
-                                    className={`text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-base lg:text-lg whitespace-nowrap ${
-                                        isActive(item.to) 
-                                            ? 'border-b-2 border-red-600 text-red-600' 
+                                    className={`text-gray-700 hover:text-red-600 transition-colors duration-200 font-medium text-base lg:text-lg whitespace-nowrap ${isActive(item.to)
+                                            ? 'border-b-2 border-red-600 text-red-600'
                                             : ''
-                                    }`}
+                                        }`}
                                 >
                                     {item.label}
                                 </Link>

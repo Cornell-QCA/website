@@ -1,0 +1,1 @@
+Our education team is developing a comprehensive QCA Wiki that introduces the essential math and physics behind quantum computing, descriptions of major qubit architectures, and quantum gates. The website will also feature interactive Bloch‑sphere simulations and visualizations of basic quantum circuits to help learners build intuition through hands‑on exploration.
