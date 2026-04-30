@@ -32,7 +32,8 @@ const Events: React.FC = () => {
                         try {
                             const response = await fetch(`data/events/${event.file}.md`);
                             const markdown = await response.text();
-                            return <div dangerouslySetInnerHTML={{ __html: marked(markdown) }} />;
+                            const htmlContent = await marked.parse(markdown);
+                            return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
                         } catch (error) {
                             console.error(`Failed to load description for ${event.file}:`, error);
                             return <div>More details coming soon.</div>;

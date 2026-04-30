@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
             try {
               const response = await fetch(`/data/projects/${project.file}.md`);
               const markdown = await response.text();
-              const html = DOMPurify.sanitize(marked.parse(markdown) as string);
+              const html = DOMPurify.sanitize(await marked.parse(markdown));
               return {
                 ...project,
                 descriptionNode: <div dangerouslySetInnerHTML={{ __html: html }} />
