@@ -60,7 +60,7 @@ const CoffeeChat: React.FC = () => {
         result.data.forEach(async (person: CoffeeChatData) => {
           const response = await fetch(`data/coffee_bios/${person.linkedin}.md`);
           const markdown = await response.text();
-          const htmlContent: string = marked.parse(markdown).toString()
+          const htmlContent = await marked.parse(markdown);
 
           setBios((prevBios) => ({
             ...prevBios,
