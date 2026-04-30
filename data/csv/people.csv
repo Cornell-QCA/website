@@ -1,27 +1,30 @@
 name,linkedin,title,subteam,eboard,club_status
 Ahan Mishra,ahan-mishra,Algos Lead,algos,true,member
 Alec Riso,alec-riso,,theory,false,member
-Angela Bao,angela-bao-08760922b,,theory,false,member
-Arnab Ghosh,arnab-ghosh819,Education Lead,education,true,member
+Arnab Ghosh,arnab-ghosh819,,education,false,member
 Arnav Kaul,kaul-arnav,,algos,false,member
 Austin Wu,austin--wu,Hardware Lead,hardware,true,member
 Avery Avila,averyavila,SWE @ Google,algos,true,alumni
 Bruno Chong,bruno-chong-625220284,,business,false,member
-Emerson Moore,emerson-moore-643314316,Theory Lead,theory,true,member
 Haadi Khan,haadi-khan,President,theory,true,member
 Irwin Wang,irwin-wang-a97ab5308,,hardware,false,member
 Isabela Chaveztello,isabela-chaveztello,Business Lead,business,true,member
-Kevin Sullivan,kevin-sullivan-052bb729a,,theory,false,member
+Kevin Sullivan,kevin-sullivan-052bb729a,Theory Lead,theory,true,member
 Mason Drew,mason-drew-558ba92b4,,hardware,false,member
 Matt Can,matt-can-28925432b,,theory,false,member
 Nelson Ooi,nelson-ooi,Stanford ECE PhD,hardware,true,alumni
-Pranav K. Anoop,pranav-kurungod-anoop-6a23161aa,Algos Lead,"algos,education",true,member
+Pranav K. Anoop,pranav-kurungod-anoop-6a23161aa,,"algos,education",,member
 Rohan Shankar,rohanpshankar,,algos,false,member
 Ryan Byrne,ryan-byrne-300,Advisor,theory,true,alumni
 Saavan Shah,saavan-shah,,theory,false,member
 Victoria Shenderov,victoria-shenderov-229915255,,hardware,false,member
-William Liaw,william-liaw-1209881b1,,theory,false,member
-Or Katz,or-katz-8709a2268,Hardware Advisor,hardware,false,advisor
-Peter McMahon,peterlmcmahon,Club Advisor,hardware,false,advisor
+Madhav Venkatachalam,madhav-venkatachalam,,theory,false,member
+Zachary Cohen,zachary-cohen-86b122383,,theory,false,member
+Moustafa Kassem,moustafa0,,theory,false,member
+Joshua Lancman,joshualancman,,theory,false,member
+Minh Nguyen,minh-lp-nguyen,,theory,false,member
 Valla Fatemi,valla-fatemi,Club Advisor,theory,false,advisor
-Yichen Xu,yichen-xu-236562245,Theory Advisor,theory,false,advisor
+Peter McMahon,peter-mcmahon,Club Advisor,hardware,false,advisor
+Or Katz,or-katz,Hardware Advisor,hardware,false,advisor
+Yiwen Lu,yiwen-lu-11a60431b,,education,false,member
+Jihoon Kim,josh-jihoon-kim,Education Lead,education,true,member

@@ -1,6 +1,7 @@
-title,group,file,link
-Anyon Braiding Simulator,Theory,anyon,https://github.com/Cornell-QCA/anyon-braiding-simulator
-ZX-Calculus Error Correction,Theory,zxqec,
-Quantum Algorithms,Algos,qalg,
-Photonic Quantum Memory,Hardware,quantummemory,
-OpenQuantum MOT,Hardware,openquantumtrap,
+title,group,file,link,status
+Anyon Braiding Simulator,Theory,anyon,https://github.com/Cornell-QCA/anyon-braiding-simulator,past
+ZX-Calculus Error Correction,Theory,zxqec,,active
+Quantum Algorithms,Algos,qalg,,active
+Photonic Quantum Memory,Hardware,quantummemory,,active
+OpenQuantum MOT,Hardware,openquantumtrap,,active
+QCA Wiki,Education,education,,active
