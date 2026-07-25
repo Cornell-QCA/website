@@ -42,15 +42,9 @@ const Events: React.FC = () => {
                 );
                 setEventDescriptions(descriptions);
                 
-                // Start with upcoming events tab if there are any, otherwise show previous
-                const upcomingEvents = eventData.filter((e: EventData) => e.type === 'upcoming');
-                if (upcomingEvents.length > 0) {
-                    setFilteredEvents(upcomingEvents);
-                    setActiveTab('upcoming');
-                } else {
-                    setFilteredEvents(eventData.filter((e: EventData) => e.type === 'previous'));
-                    setActiveTab('previous');
-                }
+                // Always default to 'upcoming' so visitors see that we have an active pipeline, even if currently empty
+                setFilteredEvents(eventData.filter((e: EventData) => e.type === 'upcoming'));
+                setActiveTab('upcoming');
             },
         });
     }, []);
