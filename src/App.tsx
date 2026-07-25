@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
         <footer className="flex items-center justify-center w-full min-h-[6rem] border-t text-xs sm:text-sm px-4 py-6 mt-8">
           <p className="text-center text-gray-600 leading-relaxed max-w-2xl">
-            © 2025 Quantum Computing Association at Cornell. This organization is a
+            © {new Date().getFullYear()} Quantum Computing Association at Cornell. This organization is a
             registered student organization of Cornell University.{''}
             <p></p>
 

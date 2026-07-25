@@ -8,6 +8,7 @@ interface EventData {
     location: string;
     file: string;
     image: string;
+    end_date: string;
     type: 'upcoming' | 'previous';
 }
 
@@ -19,18 +20,29 @@ const Events: React.FC = () => {
 
     useEffect(() => {
         // Load and parse the CSV
-        Papa.parse('data/csv/events.csv', {
+        Papa.parse('/data/csv/events.csv', {
             download: true,
             header: true,
+            skipEmptyLines: true,
             complete: async (result: any) => {
-                const eventData = result.data;
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const eventData = result.data.map((event: any) => {
+                    const eventDate = new Date(event.end_date);
+                    // Automatically categorize events: if end_date >= today, it's upcoming
+                    const isValidDate = !isNaN(eventDate.getTime());
+                    const type = (isValidDate && eventDate >= today) ? 'upcoming' : 'previous';
+                    return { ...event, type };
+                }) as EventData[];
+
                 setEvents(eventData);
 
                 // Fetch and parse markdown files
                 const descriptions = await Promise.all(
                     eventData.map(async (event: EventData) => {
                         try {
-                            const response = await fetch(`data/events/${event.file}.md`);
+                            const response = await fetch(`/data/events/${event.file}.md`);
                             const markdown = await response.text();
                             const htmlContent = await marked.parse(markdown);
                             return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
@@ -42,15 +54,9 @@ const Events: React.FC = () => {
                 );
                 setEventDescriptions(descriptions);
                 
-                // Start with upcoming events tab if there are any, otherwise show previous
-                const upcomingEvents = eventData.filter((e: EventData) => e.type === 'upcoming');
-                if (upcomingEvents.length > 0) {
-                    setFilteredEvents(upcomingEvents);
-                    setActiveTab('upcoming');
-                } else {
-                    setFilteredEvents(eventData.filter((e: EventData) => e.type === 'previous'));
-                    setActiveTab('previous');
-                }
+                // Always default to 'upcoming' so visitors see that we have an active pipeline
+                setFilteredEvents(eventData.filter((e: EventData) => e.type === 'upcoming'));
+                setActiveTab('upcoming');
             },
         });
     }, []);
