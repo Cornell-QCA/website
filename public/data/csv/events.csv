@@ -1,9 +1,9 @@
-name,timeline,location,file,image,type
-Qiskit Fall Fest '23,October 15-16 2023,Phillips 219,qff23,qiskit,previous
-Mehta Lab Tour,March 20 2024,Clark Hall,mehta_lab,mehta,previous
-Summer NME,June 11 - Aug 6 2024,Phillips 101,summer_nme,nme,previous
-Qiskit Fall Fest '24,October 14-15 2024,Phillips 219,qff24,qiskit,previous
-Fatemi Lab Tour,October 28th 2024,Clark Hall,fatemi_lab,fatemi,previous
-Francesco Valenti (IBM Quantum),November 1st 2024,Rockefeller 132,valenti,valenti,previous
-Fireside Chat with Michel Devoret,November 19th,Clark 247,devoret,devoret,previous
-QCA Fundamentals '25,September 23-December 6th 2025,Rockefeller 122,fundamentals,fundamentals,upcoming
+name,timeline,location,file,image,end_date
+Qiskit Fall Fest '23,October 15-16 2023,Phillips 219,qff23,qiskit,2023-10-16
+Mehta Lab Tour,March 20 2024,Clark Hall,mehta_lab,mehta,2024-03-20
+Summer NME,June 11 - Aug 6 2024,Phillips 101,summer_nme,nme,2024-08-06
+Qiskit Fall Fest '24,October 14-15 2024,Phillips 219,qff24,qiskit,2024-10-15
+Fatemi Lab Tour,October 28th 2024,Clark Hall,fatemi_lab,fatemi,2024-10-28
+Francesco Valenti (IBM Quantum),November 1st 2024,Rockefeller 132,valenti,valenti,2024-11-01
+Fireside Chat with Michel Devoret,November 19th,Clark 247,devoret,devoret,2024-11-19
+QCA Fundamentals '25,September 23-December 6th 2025,Rockefeller 122,fundamentals,fundamentals,2025-12-06
