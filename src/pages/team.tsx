@@ -45,20 +45,27 @@ const People: React.FC = () => {
             return result;
         };
         
-        // Helper function to sort members with eboard lead first, then alphabetically
+        // Helper function to sort subteam members: Team Lead first, then other Eboard members, then remaining members alphabetically
         const sortWithLeadFirst = (members: Person[], leadTitle: string) => {
-            const leads = members.filter(person => 
-                person.title && person.title.toLowerCase().includes(leadTitle.toLowerCase())
-            );
-            const others = members
-                .filter(person => !person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+            const leads = members
+                .filter(person => person.title && person.title.toLowerCase().includes(leadTitle.toLowerCase()))
                 .sort((a, b) => a.name.localeCompare(b.name));
-            
-            
-            // Sort leads alphabetically too, then add others
-            const sortedLeads = leads.sort((a, b) => a.name.localeCompare(b.name));
-            const result = [...sortedLeads, ...others];
-            return result;
+
+            const otherEboard = members
+                .filter(person => 
+                    person.eboard === 'true' && 
+                    (!person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+                )
+                .sort((a, b) => a.name.localeCompare(b.name));
+
+            const remainingMembers = members
+                .filter(person => 
+                    person.eboard !== 'true' && 
+                    (!person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+                )
+                .sort((a, b) => a.name.localeCompare(b.name));
+
+            return [...leads, ...otherEboard, ...remainingMembers];
         };
 
         // Helper function to sort eboard with President first
