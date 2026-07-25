@@ -1,26 +1,28 @@
 name,linkedin,title,subteam,eboard,club_status
-Ahan Mishra,ahan-mishra,Algos Lead,algos,true,member
+Ahan Mishra,ahan-mishra,,algos,false,member
 Alec Riso,alec-riso,,theory,false,member
 Arnab Ghosh,arnab-ghosh819,,education,false,member
 Arnav Kaul,kaul-arnav,,algos,false,member
-Austin Wu,austin--wu,Hardware Lead,hardware,true,member
+Austin Wu,austin--wu,,hardware,false,alumni
 Avery Avila,averyavila,SWE @ Google,algos,true,alumni
 Bruno Chong,bruno-chong-625220284,,business,false,member
-Haadi Khan,haadi-khan,President,theory,true,member
+Haadi Khan,haadi-khan,,business,false,alumni
 Irwin Wang,irwin-wang-a97ab5308,,hardware,false,member
 Isabela Chaveztello,isabela-chaveztello,Business Lead,business,true,member
 Kevin Sullivan,kevin-sullivan-052bb729a,Theory Lead,theory,true,member
 Mason Drew,mason-drew-558ba92b4,,hardware,false,member
 Matt Can,matt-can-28925432b,,theory,false,member
 Nelson Ooi,nelson-ooi,Stanford ECE PhD,hardware,true,alumni
-Pranav K. Anoop,pranav-kurungod-anoop-6a23161aa,,"algos,education",,member
+Pranav K. Anoop,pranav-kurungod-anoop-6a23161aa,Algos Lead,"algos,education",true,member
 Rohan Shankar,rohanpshankar,,algos,false,member
 Ryan Byrne,ryan-byrne-300,Engineer @ Google Quantum AI,theory,true,alumni
 Saavan Shah,saavan-shah,,theory,false,member
-Victoria Shenderov,victoria-shenderov-229915255,,hardware,false,member
+Victoria Shenderov,victoria-shenderov-229915255,Hardware Lead,hardware,true,member
 Madhav Venkatachalam,madhav-venkatachalam,,theory,false,member
+Audrey Horn,audrey-horn-79396b258,,theory,false,member
+Maya Pousson,10101maya-p,,theory,false,member
 Zachary Cohen,zachary-cohen-86b122383,,theory,false,member
-Moustafa Kassem,moustafa0,,theory,false,member
+Moustafa Kassem,moustafa0,,theory,false,hidden
 Joshua Lancman,joshualancman,,theory,false,member
 Minh Nguyen,minh-lp-nguyen,,theory,false,member
 Valla Fatemi,valla-fatemi,Club Advisor,theory,false,advisor
