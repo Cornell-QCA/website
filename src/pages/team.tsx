@@ -111,7 +111,7 @@ const People: React.FC = () => {
                             key={index}
                             image={person.linkedin}
                             title={person.name}
-                            subtitle={showTitles ? person.title : undefined}
+                            subtitle={showTitles ? person.title?.split(',').map(t => t.trim()).join(' | ') : undefined}
                             link={`https://www.linkedin.com/in/${person.linkedin}`}
                         />
                     ))}
@@ -193,7 +193,7 @@ const People: React.FC = () => {
                                     key={index}
                                     image={person.linkedin}
                                     title={person.name}
-                                    subtitle={person.title}
+                                    subtitle={person.title?.split(',').map(t => t.trim()).join(' | ')}
                                     link={`https://www.linkedin.com/in/${person.linkedin}`}
                                 />
                             ))}
