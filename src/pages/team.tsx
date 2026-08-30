@@ -68,16 +68,23 @@ const People: React.FC = () => {
             return [...leads, ...otherEboard, ...remainingMembers];
         };
 
-        // Helper function to sort eboard with President first
+        // Helper function to sort eboard in hierarchical order: President, Vice President, Treasurer, then Team Leads alphabetically
         const sortEboard = (members: Person[]) => {
-            const president = members.find(person => 
-                person.title && person.title.toLowerCase().includes('president')
-            );
-            const others = members
-                .filter(person => !person.title || !person.title.toLowerCase().includes('president'))
-                .sort((a, b) => a.name.localeCompare(b.name));
-            
-            return president ? [president, ...others] : others;
+            const getRoleRank = (person: Person) => {
+                if (!person.title) return 99;
+                const title = person.title.toLowerCase();
+                if (/\bpresident\b/i.test(title) && !/\bvice\s+president\b/i.test(title)) return 1;
+                if (/\bvice\s+president\b/i.test(title)) return 2;
+                if (/\btreasurer\b/i.test(title)) return 3;
+                return 10;
+            };
+
+            return [...members].sort((a, b) => {
+                const rankA = getRoleRank(a);
+                const rankB = getRoleRank(b);
+                if (rankA !== rankB) return rankA - rankB;
+                return a.name.localeCompare(b.name);
+            });
         };
 
         const sections = {
