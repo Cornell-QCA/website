@@ -78,10 +78,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             to="/coffee"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full bg-red-600 text-white text-center px-4 py-3 rounded-md hover:bg-red-700 transition-colors duration-200 font-medium"
+            className="block w-full bg-gray-300 text-gray-600 text-center px-4 py-3 rounded-md hover:bg-gray-400 transition-colors duration-200 font-medium"
             onClick={onClose}
           >
-            Coffee Chat!
+            Coffee Chats Paused
           </Link>
         </div>
       </div>
