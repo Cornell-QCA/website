@@ -96,9 +96,9 @@ const Navbar: React.FC = () => {
                                 to="/coffee"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hidden md:block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors duration-200 font-medium"
+                                className="hidden md:block bg-gray-300 text-gray-600 px-4 py-2 rounded-md hover:bg-gray-400 transition-colors duration-200 font-medium"
                             >
-                                Coffee Chat!
+                                Coffee Chats Paused
                             </Link>
 
                             {/* Mobile Hamburger Menu */}
