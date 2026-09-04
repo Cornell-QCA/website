@@ -3,21 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 interface CardProps {
-    image: string;
+    image?: string;
     title: string;
     subtitle?: string;
-    link: string;
+    link?: string;
     children?: React.ReactNode; // Support children for custom content
 }
 
 const Card: React.FC<CardProps> = ({ image, title, subtitle, link, children }) => {
     const [imgError, setImgError] = useState(false);
 
-    return (
-        <a href={link} target="_blank" rel="noopener noreferrer" className="group">
+    const card = (
             <div className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
                 <div className="aspect-square overflow-hidden bg-gray-50 flex items-center justify-center">
-                    {!imgError ? (
+                    {image && !imgError ? (
                         <img 
                             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" 
                             src={'people/' + image + '.jpg'} 
@@ -46,7 +45,12 @@ const Card: React.FC<CardProps> = ({ image, title, subtitle, link, children }) =
                     )}
                 </div>
             </div>
-        </a>
+    );
+
+    return link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="group">{card}</a>
+    ) : (
+        <div className="group">{card}</div>
     );
 };
 

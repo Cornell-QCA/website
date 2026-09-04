@@ -94,6 +94,9 @@ const People: React.FC = () => {
             theory: sortWithLeadFirst(peopleList.filter(person => 
                 getSubteams(person.subteam).includes('theory') && person.club_status.toLowerCase() === 'member'
             ), 'theory lead'),
+            decoding: sortWithLeadFirst(peopleList.filter(person =>
+                getSubteams(person.subteam).includes('decoding') && person.club_status.toLowerCase() === 'member'
+            ), 'decoding lead'),
             hardware: sortWithLeadFirst(peopleList.filter(person => 
                 getSubteams(person.subteam).includes('hardware') && person.club_status.toLowerCase() === 'member'
             ), 'hardware lead'),
@@ -126,7 +129,7 @@ const People: React.FC = () => {
                             image={person.linkedin}
                             title={person.name}
                             subtitle={showTitles ? person.title?.split(',').map(t => t.trim()).join(' | ') : undefined}
-                            link={`https://www.linkedin.com/in/${person.linkedin}`}
+                            link={person.linkedin ? `https://www.linkedin.com/in/${person.linkedin}` : undefined}
                         />
                     ))}
                 </div>
@@ -192,6 +195,7 @@ const People: React.FC = () => {
                                 <div>
                                     {renderSection('Eboard', sections.eboard, true)}
                                     {renderSection('Theory', sections.theory, false)}
+                                    {renderSection('Decoding', sections.decoding, false)}
                                     {renderSection('Hardware', sections.hardware, false)}
                                     {renderSection('Algos', sections.algos, false)}
                                     {renderSection('BizOps', sections.bizops, false)}
@@ -208,7 +212,7 @@ const People: React.FC = () => {
                                     image={person.linkedin}
                                     title={person.name}
                                     subtitle={person.title?.split(',').map(t => t.trim()).join(' | ')}
-                                    link={`https://www.linkedin.com/in/${person.linkedin}`}
+                                    link={person.linkedin ? `https://www.linkedin.com/in/${person.linkedin}` : undefined}
                                 />
                             ))}
                         </div>
