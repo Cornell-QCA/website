@@ -11,6 +11,13 @@ interface Person {
     club_status: string;
 }
 
+const compareByLastName = (a: Person, b: Person) => {
+    const lastNameA = a.name.trim().split(/\s+/).pop() ?? '';
+    const lastNameB = b.name.trim().split(/\s+/).pop() ?? '';
+
+    return lastNameA.localeCompare(lastNameB) || a.name.localeCompare(b.name);
+};
+
 const People: React.FC = () => {
     const [people, setPeople] = useState<Person[]>([]);
     const [filteredPeople, setFilteredPeople] = useState<Person[]>([]);
@@ -45,30 +52,30 @@ const People: React.FC = () => {
             return result;
         };
         
-        // Helper function to sort subteam members: Team Lead first, then other Eboard members, then remaining members alphabetically
+        // Helper function to sort subteam members: Team Lead first, then other Eboard members, then remaining members by last name
         const sortWithLeadFirst = (members: Person[], leadTitle: string) => {
             const leads = members
                 .filter(person => person.title && person.title.toLowerCase().includes(leadTitle.toLowerCase()))
-                .sort((a, b) => a.name.localeCompare(b.name));
+                .sort(compareByLastName);
 
             const otherEboard = members
                 .filter(person => 
                     person.eboard === 'true' && 
                     (!person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
                 )
-                .sort((a, b) => a.name.localeCompare(b.name));
+                .sort(compareByLastName);
 
             const remainingMembers = members
                 .filter(person => 
                     person.eboard !== 'true' && 
                     (!person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
                 )
-                .sort((a, b) => a.name.localeCompare(b.name));
+                .sort(compareByLastName);
 
             return [...leads, ...otherEboard, ...remainingMembers];
         };
 
-        // Helper function to sort eboard in hierarchical order: President, Vice President, Treasurer, then Team Leads alphabetically
+        // Helper function to sort eboard in hierarchical order: President, Vice President, Treasurer, then Team Leads by last name
         const sortEboard = (members: Person[]) => {
             const getRoleRank = (person: Person) => {
                 if (!person.title) return 99;
@@ -83,7 +90,7 @@ const People: React.FC = () => {
                 const rankA = getRoleRank(a);
                 const rankB = getRoleRank(b);
                 if (rankA !== rankB) return rankA - rankB;
-                return a.name.localeCompare(b.name);
+                return compareByLastName(a, b);
             });
         };
 
@@ -206,7 +213,7 @@ const People: React.FC = () => {
                     ) : (
                         // For faculty and alumni, show as regular grid with titles
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                            {filteredPeople.map((person, index) => (
+                            {[...filteredPeople].sort(compareByLastName).map((person, index) => (
                                 <Card
                                     key={index}
                                     image={person.linkedin}
