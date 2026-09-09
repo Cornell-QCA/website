@@ -25,12 +25,12 @@ const People: React.FC = () => {
 
     useEffect(() => {
         // Load and parse the CSV
-        Papa.parse('data/csv/people.csv', {
+        Papa.parse<Person>('data/csv/people.csv', {
             download: true,
             header: true,
             skipEmptyLines: true,
-            complete: (result: any) => {
-                const validPeople = result.data.filter((p: Person) => p && p.club_status);
+            complete: (result) => {
+                const validPeople = result.data.filter((p) => p && p.club_status);
                 setPeople(validPeople);
                 setFilteredPeople(validPeople.filter((person: Person) => person.club_status.toLowerCase() === 'member'));
             },

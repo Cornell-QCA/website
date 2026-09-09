@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 
 interface EventData {
     name: string;
@@ -12,6 +13,15 @@ interface EventData {
     type: 'upcoming' | 'previous';
 }
 
+interface EventCsvRow {
+    name: string;
+    timeline: string;
+    location: string;
+    file: string;
+    image: string;
+    end_date: string;
+}
+
 const Events: React.FC = () => {
     const [events, setEvents] = useState<EventData[]>([]);
     const [filteredEvents, setFilteredEvents] = useState<EventData[]>([]);
@@ -20,15 +30,15 @@ const Events: React.FC = () => {
 
     useEffect(() => {
         // Load and parse the CSV
-        Papa.parse('/data/csv/events.csv', {
+        Papa.parse<EventCsvRow>('/data/csv/events.csv', {
             download: true,
             header: true,
             skipEmptyLines: true,
-            complete: async (result: any) => {
+            complete: async (result) => {
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
 
-                const eventData = result.data.map((event: any) => {
+                const eventData = result.data.map((event) => {
                     const eventDate = new Date(event.end_date);
                     // Automatically categorize events: if end_date >= today, it's upcoming
                     const isValidDate = !isNaN(eventDate.getTime());
@@ -44,7 +54,7 @@ const Events: React.FC = () => {
                         try {
                             const response = await fetch(`/data/events/${event.file}.md`);
                             const markdown = await response.text();
-                            const htmlContent = await marked.parse(markdown);
+                            const htmlContent = DOMPurify.sanitize(await marked.parse(markdown));
                             return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
                         } catch (error) {
                             console.error(`Failed to load description for ${event.file}:`, error);

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './sidebar';
 
 const Navbar: React.FC = () => {
     const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const lastScrollY = useRef(0);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const location = useLocation();
 
@@ -24,21 +24,21 @@ const Navbar: React.FC = () => {
         return location.pathname === path;
     };
 
-    const controlNavbar = () => {
+    const controlNavbar = useCallback(() => {
         if (typeof window !== 'undefined') {
             const currentScrollY = window.scrollY;
 
             // Always show navbar when at the top of the page
             if (currentScrollY <= 10) {
                 setIsVisible(true);
-            } else if (currentScrollY > lastScrollY) { // if scrolling down
+            } else if (currentScrollY > lastScrollY.current) { // if scrolling down
                 setIsVisible(false);
             } else { // if scrolling up
                 setIsVisible(true);
             }
-            setLastScrollY(currentScrollY);
+            lastScrollY.current = currentScrollY;
         }
-    };
+    }, []);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
                 window.removeEventListener('scroll', controlNavbar);
             };
         }
-    }, [lastScrollY]);
+    }, [controlNavbar]);
 
     const navigationItems = [
         { to: "/", label: "Home" },
