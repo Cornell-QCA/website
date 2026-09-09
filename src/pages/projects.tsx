@@ -17,11 +17,11 @@ const Projects: React.FC = () => {
   const [projects, setProjects] = useState<ProjectData[]>([]);
 
   useEffect(() => {
-    Papa.parse('/data/csv/projects.csv', {
+    Papa.parse<ProjectData>('/data/csv/projects.csv', {
       download: true,
       header: true,
       skipEmptyLines: true,
-      complete: async (result: any) => {
+      complete: async (result) => {
         const projectData = result.data as ProjectData[];
 
         // Fetch and parse markdown files
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
                 ...project,
                 descriptionNode: <div dangerouslySetInnerHTML={{ __html: html }} />
               };
-            } catch (error) {
+            } catch {
               return {
                 ...project,
                 descriptionNode: <div>Project details coming soon.</div>

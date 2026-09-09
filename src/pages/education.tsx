@@ -1,6 +1,6 @@
 import React from 'react'
 const EducationPage: React.FC = () => {
-    let isReady = false;
+    const isReady = false;
     return isReady ? (
         <div className='max-w-screen-xl mx-auto'>
             <div className="px-6 py-8">
