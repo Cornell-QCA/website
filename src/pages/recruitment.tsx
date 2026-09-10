@@ -105,32 +105,13 @@ const ActiveRecruitmentHero = () => (
 
 
 const OffCycleHero = () => {
-    // Toggle this to false if leadership decides against continuous evaluation to avoid capacity burden
-    const ALLOW_CONTINUOUS_EVALUATION = true; 
-
     return (
         <div className="text-center mb-12 bg-gradient-to-b from-gray-50 to-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Applications are Closed</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Not Recruiting for Fall 2026</h2>
             <div className="w-24 h-px bg-gray-300 mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed mb-6">
-                Our formal recruitment cycle has concluded for the semester. You can review our previous process below as a reference for the next recruitment period. Please note that exact dates will vary.
+                We are not recruiting for Fall 2026. Please check back in Spring 2027 for information about our next recruitment cycle.
             </p>
-            
-            {ALLOW_CONTINUOUS_EVALUATION && (
-                <div className="mt-8 bg-white border-l-4 border-qca_red_dark-500 rounded-lg shadow-md p-6 sm:p-8 max-w-3xl mx-auto text-left flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-lg transition-shadow duration-300">
-                    <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">Continuous Evaluation</h3>
-                        <p className="text-gray-600">
-                            We maintain an open-door policy for individuals with rigorous technical experience. If you are highly self-motivated and enjoy tackling difficult problems in quantum computing, we welcome you to reach out.
-                        </p>
-                    </div>
-                    <div className="flex-shrink-0">
-                        <Link to="/contact" className="inline-block px-8 py-3 bg-white text-qca_red_dark-500 border-2 border-qca_red_dark-500 rounded-lg font-medium hover:bg-qca_red_dark-50 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200">
-                            Get in Touch
-                        </Link>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
