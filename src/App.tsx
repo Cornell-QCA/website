@@ -37,7 +37,6 @@ const App: React.FC = () => {
           <p className="text-center text-gray-600 leading-relaxed max-w-2xl">
             © {new Date().getFullYear()} Quantum Computing Association at Cornell. This organization is a
             registered student organization of Cornell University.{''}
-            <p></p>
 
             <a
               href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment"
