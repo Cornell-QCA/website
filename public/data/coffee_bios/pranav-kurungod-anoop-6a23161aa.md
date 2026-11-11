@@ -1,0 +1,1 @@
+Interested in quantum mechanics, algos, and all things physics! Also love playing chess and jazz drums

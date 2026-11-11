@@ -1,0 +1,1 @@
+Interested in open quantum dynamics and error correction. Researcher @ Katz + Fatemi Labs

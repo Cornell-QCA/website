@@ -1,0 +1,233 @@
+import React, { useEffect, useState } from 'react';
+import Papa from 'papaparse';
+import Card from '../components/card';
+
+interface Person {
+    name: string;
+    linkedin: string;
+    title: string;
+    subteam: string;
+    eboard: string;
+    club_status: string;
+}
+
+const compareByLastName = (a: Person, b: Person) => {
+    const lastNameA = a.name.trim().split(/\s+/).pop() ?? '';
+    const lastNameB = b.name.trim().split(/\s+/).pop() ?? '';
+
+    return lastNameA.localeCompare(lastNameB) || a.name.localeCompare(b.name);
+};
+
+const People: React.FC = () => {
+    const [people, setPeople] = useState<Person[]>([]);
+    const [filteredPeople, setFilteredPeople] = useState<Person[]>([]);
+    const [activeTab, setActiveTab] = useState<string>('member');
+
+    useEffect(() => {
+        // Load and parse the CSV
+        Papa.parse<Person>('data/csv/people.csv', {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: (result) => {
+                const validPeople = result.data.filter((p) => p && p.club_status);
+                setPeople(validPeople);
+                setFilteredPeople(validPeople.filter((person: Person) => person.club_status.toLowerCase() === 'member'));
+            },
+        });
+    }, []);
+
+    const handleTabChange = (status: string) => {
+        setActiveTab(status);
+        setFilteredPeople(people.filter((person) => person.club_status.toLowerCase() === status.toLowerCase()));
+    };
+
+    // Function to organize people by sections
+    const organizeBySubteam = (peopleList: Person[]) => {
+        // Helper function to safely parse subteams
+        const getSubteams = (subteamString: string) => {
+            if (!subteamString) return [];
+            // Remove quotes and split by comma, then trim whitespace
+            const result = subteamString.replace(/['"]/g, '').split(',').map(s => s.trim().toLowerCase());
+            return result;
+        };
+        
+        // Helper function to sort subteam members: Team Lead first, then other Eboard members, then remaining members by last name
+        const sortWithLeadFirst = (members: Person[], leadTitle: string) => {
+            const leads = members
+                .filter(person => person.title && person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+                .sort(compareByLastName);
+
+            const otherEboard = members
+                .filter(person => 
+                    person.eboard === 'true' && 
+                    (!person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+                )
+                .sort(compareByLastName);
+
+            const remainingMembers = members
+                .filter(person => 
+                    person.eboard !== 'true' && 
+                    (!person.title || !person.title.toLowerCase().includes(leadTitle.toLowerCase()))
+                )
+                .sort(compareByLastName);
+
+            return [...leads, ...otherEboard, ...remainingMembers];
+        };
+
+        // Helper function to sort eboard in hierarchical order: President, Vice President, Treasurer, then Team Leads by last name
+        const sortEboard = (members: Person[]) => {
+            const getRoleRank = (person: Person) => {
+                if (!person.title) return 99;
+                const title = person.title.toLowerCase();
+                if (/\bpresident\b/i.test(title) && !/\bvice\s+president\b/i.test(title)) return 1;
+                if (/\bvice\s+president\b/i.test(title)) return 2;
+                if (/\btreasurer\b/i.test(title)) return 3;
+                return 10;
+            };
+
+            return [...members].sort((a, b) => {
+                const rankA = getRoleRank(a);
+                const rankB = getRoleRank(b);
+                if (rankA !== rankB) return rankA - rankB;
+                return compareByLastName(a, b);
+            });
+        };
+
+        const sections = {
+            eboard: sortEboard(peopleList.filter(person => 
+                person.eboard === 'true' && person.club_status.toLowerCase() === 'member'
+            )),
+            theory: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('theory') && person.club_status.toLowerCase() === 'member'
+            ), 'theory lead'),
+            decoding: sortWithLeadFirst(peopleList.filter(person =>
+                getSubteams(person.subteam).includes('decoding') && person.club_status.toLowerCase() === 'member'
+            ), 'decoding lead'),
+            hardware: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('hardware') && person.club_status.toLowerCase() === 'member'
+            ), 'hardware lead'),
+            algos: sortWithLeadFirst(peopleList.filter(person => {
+                const subteams = getSubteams(person.subteam);
+                const isAlgos = subteams.includes('algos');
+                const isMember = person.club_status.toLowerCase() === 'member';
+                return isAlgos && isMember;
+            }), 'algos lead'),
+            bizops: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('business') && person.club_status.toLowerCase() === 'member'
+            ), 'business lead'),
+            education: sortWithLeadFirst(peopleList.filter(person => 
+                getSubteams(person.subteam).includes('education') && person.club_status.toLowerCase() === 'member'
+            ), 'education lead')
+        };
+        return sections;
+    };
+
+    const renderSection = (title: string, sectionPeople: Person[], showTitles: boolean = false) => {
+        if (sectionPeople.length === 0) return null;
+
+        return (
+            <div className="mb-12" key={title}>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{title}</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                    {sectionPeople.map((person, index) => (
+                        <Card
+                            key={index}
+                            image={person.linkedin}
+                            title={person.name}
+                            subtitle={showTitles ? person.title?.split(',').map(t => t.trim()).join(' | ') : undefined}
+                            link={person.linkedin ? `https://www.linkedin.com/in/${person.linkedin}` : undefined}
+                        />
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
+    return (
+        <div className='w-full max-w-screen-xl mx-auto'>
+            <div className="px-4 sm:px-6 py-6 sm:py-8">
+                {/* Header Section */}
+                <div className="text-center mb-8 sm:mb-12">
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Our Team</h1>
+                    <div className="w-16 sm:w-24 h-px bg-qca_red_dark-500 mx-auto mb-4 sm:mb-6"></div>
+                    <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed px-4">
+                        Meet our members, faculty advisors, and alumni
+                    </p>
+                </div>
+
+                {/* Tab Navigation */}
+                <div className="flex justify-center mb-8 sm:mb-12">
+                    <div className="inline-flex bg-gray-100 rounded-lg p-1 w-full max-w-md sm:w-auto">
+                        <button
+                            onClick={() => handleTabChange('member')}
+                            className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 rounded-md font-medium transition-all duration-200 text-sm sm:text-base ${
+                                activeTab === 'member' 
+                                    ? 'bg-qca_red_dark-500 text-white shadow-sm' 
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            Members
+                        </button>
+                        <button
+                            onClick={() => handleTabChange('advisor')}
+                            className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 rounded-md font-medium transition-all duration-200 text-sm sm:text-base ${
+                                activeTab === 'advisor' 
+                                    ? 'bg-qca_red_dark-500 text-white shadow-sm' 
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            Faculty
+                        </button>
+                        <button
+                            onClick={() => handleTabChange('alumni')}
+                            className={`flex-1 sm:flex-none px-3 sm:px-6 py-2 rounded-md font-medium transition-all duration-200 text-sm sm:text-base ${
+                                activeTab === 'alumni' 
+                                    ? 'bg-qca_red_dark-500 text-white shadow-sm' 
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            Alumni
+                        </button>
+                    </div>
+                </div>
+
+                {/* People Grid */}
+                <div className="max-w-6xl mx-auto">
+                    {activeTab === 'member' ? (
+                        // For members, organize by subteam
+                        (() => {
+                            const sections = organizeBySubteam(filteredPeople);
+                            return (
+                                <div>
+                                    {renderSection('Eboard', sections.eboard, true)}
+                                    {renderSection('Theory', sections.theory, false)}
+                                    {renderSection('Decoding', sections.decoding, false)}
+                                    {renderSection('Hardware', sections.hardware, false)}
+                                    {renderSection('Algos', sections.algos, false)}
+                                    {renderSection('BizOps', sections.bizops, false)}
+                                    {renderSection('Education', sections.education, false)}
+                                </div>
+                            );
+                        })()
+                    ) : (
+                        // For faculty and alumni, show as regular grid with titles
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                            {[...filteredPeople].sort(compareByLastName).map((person, index) => (
+                                <Card
+                                    key={index}
+                                    image={person.linkedin}
+                                    title={person.name}
+                                    subtitle={person.title?.split(',').map(t => t.trim()).join(' | ')}
+                                    link={person.linkedin ? `https://www.linkedin.com/in/${person.linkedin}` : undefined}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default People;
