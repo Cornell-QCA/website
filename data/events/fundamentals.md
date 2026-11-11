@@ -1,0 +1,1 @@
+Our semesterly lecture series focuses on quantum computing fundamentals. It's designed to be beginner-friendly, and accessible no matter your background

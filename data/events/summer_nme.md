@@ -1,0 +1,1 @@
+Our summer workshop series focuses on quantum computing fundamentals, covering topics from basic quantum mechanics to advanced quantum algorithms
